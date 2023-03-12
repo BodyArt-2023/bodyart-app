@@ -1,10 +1,11 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "../common/Buttons";
 import Label from "../common/Label";
 import logoLavanda from "public/images/logos/logolavandawithtext.svg";
 import { Link as LinkScroll } from "react-scroll";
+import { useRouter } from "next/router";
 
 const OPTIONS_CONSUMIDOR = {
   accessEnabled: {
@@ -15,17 +16,22 @@ const OPTIONS_CONSUMIDOR = {
       {
         label: "Home",
         toScroll: "homeCliente",
-        to: "",
+        to: "/",
       },
       {
         label: "Catálogo",
         toScroll: "catalogoCliente",
-        to: "",
+        to: "/",
       },
       {
-        label: "Serviços",
-        toScroll: "",
-        to: "",
+        label: "Feed",
+        toScroll: "feedCliente",
+        to: "/feed",
+      },
+      {
+        label: "Buscar",
+        toScroll: "buscarCliente",
+        to: "/buscar",
       },
     ],
     optionsRight: [
@@ -36,7 +42,7 @@ const OPTIONS_CONSUMIDOR = {
       },
       {
         label: "Acessar",
-        to: "",
+        to: "/acessar",
       },
     ],
   },
@@ -53,6 +59,8 @@ const OPTIONS_PROFISSIONAL = {
 };
 
 export default function Header({ className }) {
+  const router = useRouter();
+
   return (
     <StyledHeader className={className}>
       <StyledNav className="container">
@@ -66,6 +74,9 @@ export default function Header({ className }) {
                 smooth={true}
                 offset={-80.01}
                 duration={110}
+                onClick={() =>
+                  router.pathname === option.to ? null : router.push(option.to)
+                }
               >
                 {option?.component ? option?.component : <>{option.label}</>}
               </LinkScroll>
@@ -80,7 +91,11 @@ export default function Header({ className }) {
               {option?.component ? (
                 option?.component
               ) : (
-                <Button themeButton={option?.themeButton}>
+                <Button
+                  style={{ fontSize: "0.95rem" }}
+                  themeButton={option?.themeButton}
+                  onClick={() => router.push(option.to)}
+                >
                   {option.label}
                 </Button>
               )}
@@ -100,7 +115,7 @@ const StyledLogo = styled(Image)`
 const StyledLi = styled.li`
   transition: 0.2s;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: ${({ theme }) => theme.colors.lapis_lazuli};
   :hover {
     color: ${({ theme }) => theme.colors.african_violet};
@@ -130,6 +145,6 @@ const StyledHeader = styled.header`
   position: fixed;
   width: 100%;
   z-index: 100;
-  background: white;
+  background: ${({ theme }) => theme.colors.white};
   top: 0px;
 `;

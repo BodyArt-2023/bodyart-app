@@ -1,5 +1,4 @@
-import Color from "color";
-import React, { useRef, useState } from "react";
+import React from "react";
 import Select from "react-select";
 import styled, { keyframes } from "styled-components";
 
@@ -13,14 +12,13 @@ export function Input({
   defaultValue,
   className,
   classNameContainer,
+  innerRef
 }) {
-  const myRef = useRef();
-
   return (
     <div className={`input-group ${classNameContainer}`}>
       {oneHolder ? <span className="input-group-text">{oneHolder}</span> : null}
       <StyledInput
-        ref={myRef}
+        ref={innerRef}
         type={type}
         value={value}
         defaultValue={defaultValue}
@@ -35,7 +33,6 @@ export function Input({
 
 const StyledInput = styled.input.attrs({ className: "form-control" })`
   transition: 0.2s;
-  text-transform: capitalize;
   :enabled {
   }
   :disabled {

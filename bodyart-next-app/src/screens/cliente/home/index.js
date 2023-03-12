@@ -3,7 +3,7 @@ import { Input } from "@/components/common/Inputs";
 import Label from "@/components/common/Label";
 import Section from "@/components/common/Section";
 import styled from "styled-components";
-import Feed from "./Feed";
+import Feed from "./Catalogo";
 import Home from "./Home";
 
 export default function HomeCliente() {
