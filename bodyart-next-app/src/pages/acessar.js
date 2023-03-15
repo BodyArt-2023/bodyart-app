@@ -6,7 +6,6 @@ import React from "react";
 export default function Acessar() {
   return (
     <>
-      <Header />
       <AcessarCliente />
     </>
   );

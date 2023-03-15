@@ -39,16 +39,31 @@ export default function FormSign({
       </div>
       {inputs
         ? inputs.map((input) => (
-            <StyledInput
-              key={input.name}
-              name={input.name}
-              placeholder={input.placeholder}
-              type={input.type}
-              autoComplete={input.autoComplete}
-              autoFocus={input.autoFocus}
-              innerRef={input.ref}
-              {...register(input.name)}
-            />
+            <div key={input.label}>
+              {input.type === "date" ? (
+                <StyledInput
+                  name={input.name}
+                  placeholder={input.placeholder}
+                  type="text"
+                  autoComplete={input.autoComplete}
+                  autoFocus={input.autoFocus}
+                  innerRef={input.ref}
+                  onMouseEnter={(ev) => (ev.target.type = "date")}
+                  onMouseLeave={(ev) => (ev.target.type = "text")}
+                  {...register(input.name)}
+                />
+              ) : (
+                <StyledInput
+                  name={input.name}
+                  placeholder={input.placeholder}
+                  type={input.type}
+                  autoComplete={input.autoComplete}
+                  autoFocus={input.autoFocus}
+                  innerRef={input.ref}
+                  {...register(input.name)}
+                />
+              )}
+            </div>
           ))
         : null}
       {buttonsGenero ? (

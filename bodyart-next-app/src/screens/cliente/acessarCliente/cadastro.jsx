@@ -1,3 +1,4 @@
+import api from "@/api";
 import FormSign from "@/components/varied/FormSign";
 import React from "react";
 
@@ -17,9 +18,16 @@ const INPUTS_CADASTRO = [
     autoFocus: "off",
   },
   {
-    name: "celular",
+    name: "dataNascimento",
+    type: "date",
+    placeholder: "Data de Nascimento",
+    autoComplete: "off",
+    autoFocus: "off",
+  },
+  {
+    name: "telefone",
     type: "text",
-    placeholder: "Celular",
+    placeholder: "Telefone",
     autoComplete: "off",
     autoFocus: "off",
   },
@@ -68,18 +76,19 @@ export default function CadastroCliente({ onClickLabel, isOpen }) {
       buttonsGenero={BUTTONS_GENERO}
       onSubmitForm={(data) => {
         console.log(data);
-        // api
-        //   .post(`/clientes/autenticar`, data)
-        //   .then((res) => {
-        //     toast.success("Login efetuado!");
-        //     navigate("/inicio-cliente");
-        //   })
-        //   .catch((erro) => {
-        //     toast.warning("Login inválido!");
-        //     console.log(erro);
-
-        //     setErrorsMessage(Validate(erro.response.data.errors));
-        //   });
+        api
+          .post(`/usuarios/cliente`, data)
+          .then((res) => {
+            alert("cadastrado");
+            // toast.success("Login efetuado!");
+            // navigate("/inicio-cliente");
+          })
+          .catch((erro) => {
+            alert("error");
+            // toast.warning("Login inválido!");
+            console.log(erro);
+            // setErrorsMessage(Validate(erro.response.data.errors));
+          });
       }}
     />
   );

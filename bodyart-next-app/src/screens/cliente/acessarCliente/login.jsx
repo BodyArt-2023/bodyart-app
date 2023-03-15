@@ -1,9 +1,10 @@
+import api from "@/api";
 import FormSign from "@/components/varied/FormSign";
 import React from "react";
 
 const INPUTS_LOGIN = [
   {
-    name: "email",
+    name: "login",
     type: "email",
     placeholder: "E-mail",
     autoComplete: "off",
@@ -30,18 +31,19 @@ export default function Login({ isOpen, onClickLabel }) {
       inputs={INPUTS_LOGIN}
       onSubmitForm={(data) => {
         console.log(data);
-        // api
-        //   .post(`/clientes/autenticar`, data)
-        //   .then((res) => {
-        //     toast.success("Login efetuado!");
-        //     navigate("/inicio-cliente");
-        //   })
-        //   .catch((erro) => {
-        //     toast.warning("Login inválido!");
-        //     console.log(erro);
-
-        //     setErrorsMessage(Validate(erro.response.data.errors));
-        //   });
+        api
+          .post(`/auth`, data)
+          .then((res) => {
+            alert("login efetuado");
+            // toast.success("Login efetuado!");
+            // navigate("/inicio-cliente");
+          })
+          .catch((erro) => {
+            alert("usuário inválido ou inexistente");
+            // toast.warning("Login inválido!");
+            console.log(erro);
+            // setErrorsMessage(Validate(erro.response.data.errors));
+          });
       }}
     />
   );

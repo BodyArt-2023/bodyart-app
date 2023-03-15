@@ -1,5 +1,4 @@
 import Article from "@/components/common/Article";
-import { Button } from "@/components/common/Buttons";
 import Icon from "@/components/common/Icon";
 import { InputSelectSearch } from "@/components/common/Inputs";
 import Label from "@/components/common/Label";

@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useId } from "react";
 import Select from "react-select";
-import styled, { keyframes } from "styled-components";
+import styled from "styled-components";
 
 export function Input({
   oneHolder,
@@ -12,7 +12,7 @@ export function Input({
   defaultValue,
   className,
   classNameContainer,
-  innerRef
+  innerRef,
 }) {
   return (
     <div className={`input-group ${classNameContainer}`}>
@@ -69,21 +69,13 @@ export function InputSelectSearch({
         options={options}
         placeholder={placeholder}
         onChange={(ev) => alert(ev.value)}
+        instanceId={useId()}
       />
 
       {twoHolder ? <span className="input-group-text">{twoHolder}</span> : null}
     </div>
   );
 }
-
-const animOpen = keyframes`
-0%{ visibility: hidden; max-height: 0px}
-100%{ visibility: visible; max-height: 15rem}
-`;
-const animClose = keyframes`
-0%{ visibility: visible; max-height: 15rem}
-100%{ visibility: hidden; max-height: 0px}
-`;
 
 const StyledSelect = styled(Select)`
   padding: 0;

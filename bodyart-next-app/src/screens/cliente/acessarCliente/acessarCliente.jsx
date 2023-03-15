@@ -1,5 +1,4 @@
 import Article from "@/components/common/Article";
-import Label from "@/components/common/Label";
 import Section from "@/components/common/Section";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -18,13 +17,11 @@ export default function AcessarCliente() {
             <CadastroCliente
               onClickLabel={() => setCadastroIsOpen(false)}
               isOpen={cadastroIsOpen}
-              onSubmitForm={(data) => console.log("testedata", data)}
             />
           ) : (
             <LoginCliente
               onClickLabel={() => setCadastroIsOpen(true)}
               isOpen={!cadastroIsOpen}
-              onSubmitForm={(data) => console.log("testedata", data)}
             />
           )}
         </Article>
@@ -32,15 +29,6 @@ export default function AcessarCliente() {
     </Section>
   );
 }
-
-const StyledLabel = styled(Label)`
-  transition: 0.2s;
-  color: ${({ theme }) => theme.colors.light_blue};
-  :hover {
-    color: ${({ theme }) => theme.colors.lilac};
-  }
-  cursor: pointer;
-`;
 
 const StyledImagePolygon = styled.div`
   position: absolute;

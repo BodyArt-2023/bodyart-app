@@ -61,25 +61,46 @@ const OPTIONS_PROFISSIONAL = {
 export default function Header({ className }) {
   const router = useRouter();
 
+  useEffect(() => {}, [router.pathname]);
+
   return (
     <StyledHeader className={className}>
       <StyledNav className="container">
         <StyledUl>
           {OPTIONS_CONSUMIDOR.accessDisabled.optionsLeft.map((option) => (
-            <StyledLi key={option.label}>
-              <LinkScroll
-                activeClass="activeHeader"
-                to={option.toScroll}
-                spy={true}
-                smooth={true}
-                offset={-80.01}
-                duration={110}
-                onClick={() =>
-                  router.pathname === option.to ? null : router.push(option.to)
+            <StyledLi
+              key={option.label}
+              onClick={() => {
+                if (router.pathname !== option.to) {
+                  setTimeout(() => {
+                    let linkScroll = document.getElementById(
+                      `linkScroll${option.toScroll}`
+                    );
+
+                    return linkScroll ? linkScroll.click() : null;
+                  }, 150);
                 }
-              >
-                {option?.component ? option?.component : <>{option.label}</>}
-              </LinkScroll>
+
+                return router.pathname === option.to
+                  ? null
+                  : router.push(option.to);
+              }}
+            >
+              {router.pathname === option.to ? (
+                <LinkScroll
+                  id={`linkScroll${option.toScroll}`}
+                  activeClass="activeHeader"
+                  to={option.toScroll}
+                  spy={true}
+                  smooth={true}
+                  offset={-80.01}
+                  duration={110}
+                >
+                  {option?.component ? option?.component : option?.label}
+                </LinkScroll>
+              ) : (
+                option.label
+              )}
             </StyledLi>
           ))}
         </StyledUl>
@@ -141,6 +162,7 @@ const StyledNav = styled.nav`
 `;
 
 const StyledHeader = styled.header`
+  user-select: none;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
