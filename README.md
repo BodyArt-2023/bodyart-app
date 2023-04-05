@@ -1,2 +1,0 @@
-# bodyart-app
-react-app
