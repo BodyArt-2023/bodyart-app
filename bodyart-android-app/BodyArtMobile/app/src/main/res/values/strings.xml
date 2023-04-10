@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">BodyArt Mobile</string>
+    <string name="email">Email</string>
+    <string name="pswd">Senha</string>
+    <string name="fgt_pswd">Esqueci minha senha</string>
+    <string name="btn_login">Fazer login</string>
+    <string name="register">Registrar-se</string>
+    <string name="back">Voltar</string>
+    <string name="cadastro">Cadastro</string>
+    <string name="info_data">Informe os dados:</string>
+    <string name="name">Nome</string>
+    <string name="number">(XX)X XXXX-XXXX</string>
+    <string name="continuar">Continuar</string>
+    <string name="possui_conta">Já possui uma conta?</string>
+    <string name="init_session">Iniciar sessão</string>
 </resources>

@@ -4,15 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+   >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World Doidão!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       >
+       <ImageView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:src="@drawable/img_inicio"
+           android:scaleType="fitXY"
+           android:scaleX="3"
+           />
+
+       <ImageView
+           android:id="@+id/img_logo"
+           android:layout_width="250dp"
+           android:layout_height="200dp"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="150dp"
+           android:src="@mipmap/logo_lavanda" />
+
+       <EditText
+           android:id="@+id/et_email"
+           android:layout_width="250dp"
+           android:layout_height="40dp"
+           android:layout_below="@+id/img_logo"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="20dp"
+           android:background="@color/white_smoke"
+           android:padding="5dp"
+           android:hint="@string/email"
+           android:textColor="@color/gray"
+           android:inputType="textEmailAddress"/>
+       <EditText
+           android:id="@+id/et_senha"
+           android:layout_width="250dp"
+           android:layout_height="40dp"
+           android:layout_below="@+id/et_email"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="10dp"
+           android:background="@color/white_smoke"
+           android:padding="5dp"
+           android:hint="@string/pswd"
+           android:textColor="@color/gray"
+           android:inputType="textPassword|textVisiblePassword"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/fgt_pswd"
+           android:id="@+id/tv_fgt_pswd"
+           android:layout_below="@+id/et_senha"
+           android:layout_centerHorizontal="true"
+           android:layout_alignEnd="@+id/et_senha"
+           android:layout_marginTop="10dp"
+           android:textColor="@color/white"/>
+       <Button
+           android:layout_width="250dp"
+           android:layout_height="50dp"
+           android:padding="10dp"
+           android:id="@+id/btn_login"
+           android:text="@string/btn_login"
+           android:layout_below="@+id/tv_fgt_pswd"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="10dp"
+           android:backgroundTint="@color/lapis_lazuli"
+           />
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/register"
+           android:id="@+id/tv_register"
+           android:layout_below="@+id/btn_login"
+           android:layout_centerHorizontal="true"
+           android:layout_marginTop="10dp"
+           android:textColor="@color/white"
+           android:textSize="20sp"/>
+
+   </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
