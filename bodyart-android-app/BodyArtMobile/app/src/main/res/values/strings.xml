@@ -13,4 +13,18 @@
     <string name="continuar">Continuar</string>
     <string name="possui_conta">Já possui uma conta?</string>
     <string name="init_session">Iniciar sessão</string>
+    <string name="sexo">Sexo</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="outro">Outro</string>
+    <string name="dt_nasc">Data de nascimento</string>
+    <string name="dia">Dia</string>
+    <string name="ano">Ano</string>
+    <string name="mes">Mês</string>
+    <string name="cadastrar">Cadastrar-se</string>
+    <string name="redef_senha">Redefinir Senha</string>
+    <string name="msg_redef">Por favor informe o E-mail associado a sua conta que enviaremos um link para o mesmo com as instruções para restauração da sua senha</string>
+    <string name="txt_email_redef">Enviar e-mail de redefinição</string>
+    <string name="ler_termos">termos de uso</string>
+    <string name="txt_confirmacao">Li e aceito os</string>
 </resources>

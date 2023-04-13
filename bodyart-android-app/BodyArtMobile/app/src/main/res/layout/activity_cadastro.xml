@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_back"
             android:layout_alignStart="@+id/et_name"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:text="@string/cadastro"
             android:textColor="@color/white_smoke"
             android:textSize="35sp"
@@ -42,10 +42,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_cadastro"
             android:layout_alignStart="@+id/et_name"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="60dp"
             android:text="@string/info_data"
             android:textColor="@color/white_smoke"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/et_name"
