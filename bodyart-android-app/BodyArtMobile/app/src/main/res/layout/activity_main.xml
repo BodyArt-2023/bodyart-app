@@ -61,17 +61,18 @@
            android:layout_alignEnd="@+id/et_senha"
            android:layout_marginTop="10dp"
            android:textColor="@color/white"/>
+
        <Button
+           android:id="@+id/btn_login"
            android:layout_width="250dp"
            android:layout_height="50dp"
-           android:padding="10dp"
-           android:id="@+id/btn_login"
-           android:text="@string/btn_login"
            android:layout_below="@+id/tv_fgt_pswd"
            android:layout_centerHorizontal="true"
            android:layout_marginTop="10dp"
            android:backgroundTint="@color/lapis_lazuli"
-           />
+           android:padding="10dp"
+           android:text="@string/btn_login"
+           android:onClick="login"/>
        <TextView
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
