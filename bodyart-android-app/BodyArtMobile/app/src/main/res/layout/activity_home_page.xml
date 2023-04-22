@@ -31,7 +31,7 @@
       <HorizontalScrollView
           android:layout_width="match_parent"
           android:layout_height="60dp"
-         android:id="@+id/hsv_buttons"
+          android:id="@+id/hsv_buttons"
           android:layout_marginTop="20dp"
           android:layout_below="@id/tv_autenticado">
         <LinearLayout
@@ -45,7 +45,9 @@
                android:textSize="20sp"
                android:backgroundTint="@color/black"
                android:layout_marginLeft="20dp"
-               android:textColor="@color/white"/>
+               android:textColor="@color/white"
+
+               />
            <Button
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
@@ -79,17 +81,32 @@
                android:textSize="20sp"
                android:backgroundTint="@color/black"
                android:layout_marginLeft="20dp"
-               android:textColor="@color/white"/>
+               android:textColor="@color/white"
+               />
 
         </LinearLayout>
 
       </HorizontalScrollView>
+
+
+      <TextView
+          android:id="@+id/tv_servicos"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_alignBottom="@+id/hsv_buttons"
+          android:layout_marginLeft="10dp"
+          android:layout_marginTop="60dp"
+          android:text="@string/tv_servicos"
+          android:textColor="@color/white_smoke"
+          android:textSize="30sp"
+          android:textStyle="bold" />
+
       <HorizontalScrollView
           android:layout_width="match_parent"
           android:layout_height="150dp"
           android:id="@+id/hsv_perto"
           android:layout_marginTop="20dp"
-          android:layout_below="@id/hsv_buttons">
+          android:layout_below="@id/tv_servicos">
          <LinearLayout
              android:layout_width="wrap_content"
              android:layout_height="wrap_content">
@@ -139,6 +156,9 @@
 
 
             </LinearLayout>
+
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

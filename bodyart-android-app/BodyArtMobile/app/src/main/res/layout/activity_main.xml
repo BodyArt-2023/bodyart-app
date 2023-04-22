@@ -51,16 +51,20 @@
            android:hint="@string/pswd"
            android:textColor="@color/gray"
            android:inputType="textPassword|textVisiblePassword"/>
+
        <TextView
+           android:id="@+id/tv_fgt_pswd"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:text="@string/fgt_pswd"
-           android:id="@+id/tv_fgt_pswd"
            android:layout_below="@+id/et_senha"
-           android:layout_centerHorizontal="true"
            android:layout_alignEnd="@+id/et_senha"
+           android:layout_centerHorizontal="true"
            android:layout_marginTop="10dp"
-           android:textColor="@color/white"/>
+           android:text="@string/fgt_pswd"
+           android:textColor="@color/white"
+           />
+
+
 
        <Button
            android:id="@+id/btn_login"
