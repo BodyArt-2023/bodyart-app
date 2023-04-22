@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
     fun redefinirSenha (componente: View){
         val textRedefinir =findViewById<TextView>(R.id.tv_redef_senha)
         textRedefinir.setOnClickListener {
-            val myIntent = Intent(this, RedefinirSenha::class.java)
+            val myIntent = Intent(applicationContext, RedefinirSenha::class.java)
             startActivity(myIntent)
 
            textRedefinir.movementMethod = LinkMovementMethod.getInstance()

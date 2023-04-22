@@ -93,7 +93,7 @@
           android:id="@+id/tv_servicos"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:layout_alignBottom="@+id/hsv_buttons"
+          android:layout_alignTop="@id/hsv_buttons"
           android:layout_marginLeft="10dp"
           android:layout_marginTop="60dp"
           android:text="@string/tv_servicos"
@@ -104,16 +104,16 @@
       <HorizontalScrollView
           android:layout_width="match_parent"
           android:layout_height="150dp"
-          android:id="@+id/hsv_perto"
-          android:layout_marginTop="20dp"
-          android:layout_below="@id/tv_servicos">
+          android:id="@+id/hsv_servicos"
+          android:layout_marginTop="50dp"
+          android:layout_below="@id/hsv_buttons">
          <LinearLayout
              android:layout_width="wrap_content"
              android:layout_height="wrap_content">
 
 
          <LinearLayout
-             android:layout_width="wrap_content"
+             android:layout_width="300dp"
              android:layout_height="wrap_content"
              android:baselineAligned="true"
              android:orientation="vertical"
@@ -124,18 +124,22 @@
              android:layout_width="match_parent"
              android:layout_height="90dp"
              android:src="@drawable/barbearia"
-             android:scaleType="fitXY"/>
+             android:scaleType="fitXY"
+             android:scaleX="1"
+             android:scaleY="2"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-               android:text="@string/name_profissional"
-               android:paddingHorizontal="45dp"
-               android:textColor="@color/black"/>
+                android:text="@string/name_profissional"
+                android:paddingLeft="120dp"
+                android:textColor="@color/white_smoke"
+                android:textStyle="bold"
+                />
 
 
          </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:baselineAligned="true"
                 android:orientation="vertical"
@@ -146,43 +150,22 @@
                    android:layout_width="match_parent"
                    android:layout_height="90dp"
                    android:src="@drawable/barbearia"
-                   android:scaleType="fitXY"/>
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/name_profissional"
-                   android:paddingHorizontal="45dp"
-                   android:textColor="@color/black"/>
-
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:baselineAligned="true"
-                android:orientation="vertical"
-                android:background="@color/white_smoke"
-                android:layout_marginLeft="20dp"
-                >
-               <ImageView
-                   android:layout_width="match_parent"
-                   android:layout_height="90dp"
-                   android:src="@drawable/barbearia"
-                   android:scaleType="fitXY"/>
-               <TextView
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/name_profissional"
-                   android:paddingHorizontal="45dp"
-                   android:textColor="@color/black"/>
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
 
 
             </LinearLayout>
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:baselineAligned="true"
                 android:orientation="vertical"
@@ -193,20 +176,300 @@
                    android:layout_width="match_parent"
                    android:layout_height="90dp"
                    android:src="@drawable/barbearia"
-                   android:scaleType="fitXY"/>
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
                <TextView
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="@string/name_profissional"
-                   android:paddingHorizontal="45dp"
-                   android:textColor="@color/black"/>
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
 
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+
          </LinearLayout>
 
       </HorizontalScrollView>
 
+      <TextView
+          android:id="@+id/tv_perto"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_below="@id/hsv_servicos"
+          android:layout_marginLeft="10dp"
+          android:text="@string/tv_perto"
+          android:textColor="@color/white_smoke"
+          android:textSize="30sp"
+          android:textStyle="bold" />
+
+      <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:id="@+id/hsv_perto"
+          android:layout_marginTop="-20dp"
+          android:layout_below="@id/tv_perto">
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:background="@color/white_smoke"
+                android:layout_marginLeft="20dp"
+                >
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"
+                   android:scaleX="1"
+                   android:scaleY="2"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:paddingLeft="120dp"
+                   android:textColor="@color/white_smoke"
+                   android:textStyle="bold"
+                   />
+
+
+            </LinearLayout>
+
+         </LinearLayout>
+
+      </HorizontalScrollView>
+
+
+
+      <HorizontalScrollView
+          android:layout_width="match_parent"
+          android:layout_height="150dp"
+          android:id="@+id/hsv_mais"
+          android:layout_marginTop="50dp"
+          android:layout_below="@id/hsv_perto">
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                >
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:textColor="@color/white_smoke"
+                   android:textSize="19sp"
+                   android:textStyle="bold"
+                   />
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"/>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:baselineAligned="true"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp"
+                >
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/name_profissional"
+                   android:textColor="@color/white_smoke"
+                   android:textSize="19sp"
+                   android:textStyle="bold"
+                   />
+
+               <ImageView
+                   android:layout_width="match_parent"
+                   android:layout_height="90dp"
+                   android:src="@drawable/barbearia"
+                   android:scaleType="fitXY"/>
+
+
+            </LinearLayout>
+
+
+         </LinearLayout>
+
+      </HorizontalScrollView>
 
    </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
