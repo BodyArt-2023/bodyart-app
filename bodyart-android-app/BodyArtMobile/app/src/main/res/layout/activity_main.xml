@@ -97,7 +97,7 @@
            android:layout_centerHorizontal="true"
            android:layout_marginTop="10dp"
            android:backgroundTint="@color/transparent"
-           android:onClick=""/>
+           android:onClick="registrar"/>
 
    </RelativeLayout>
 
