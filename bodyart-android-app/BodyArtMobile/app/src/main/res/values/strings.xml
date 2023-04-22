@@ -28,4 +28,9 @@
     <string name="ler_termos">termos de uso</string>
     <string name="txt_confirmacao">Li e aceito os</string>
     <string name="agenda">Agenda</string>
+    <string name="home">Home</string>
+    <string name="config">Configurações</string>
+    <string name="geolocalizacao">Geolocalização</string>
+    <string name="feed">Feed</string>
+    <string name="name_profissional">Nome aqui</string>
 </resources>
