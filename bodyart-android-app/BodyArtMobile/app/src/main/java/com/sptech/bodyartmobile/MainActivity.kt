@@ -39,4 +39,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    fun registrar(componente:View){
+        // Criando um obj que permite a navegação para outra Activity
+        val tela2 = Intent(applicationContext, Cadastro::class.java)
+
+        startActivity(tela2)
+    }
+
 }
