@@ -61,7 +61,8 @@
         android:layout_marginTop="150dp"
         android:backgroundTint="@color/lapis_lazuli"
         android:text="@string/txt_email_redef"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:onClick="sendEmail"/>
 
 
 </RelativeLayout>

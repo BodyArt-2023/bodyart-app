@@ -56,6 +56,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/white_smoke"
             android:hint="@string/name"
+            android:textColorHint="@color/gray"
             android:inputType="text"
             android:padding="5dp" />
 
@@ -68,6 +69,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/white_smoke"
             android:hint="@string/email"
+            android:textColorHint="@color/gray"
             android:inputType="textEmailAddress"
             android:padding="5dp" />
 
@@ -80,6 +82,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/white_smoke"
             android:hint="@string/pswd"
+            android:textColorHint="@color/gray"
             android:inputType="textPassword|textVisiblePassword"
             android:padding="5dp"
             />
@@ -94,6 +97,7 @@
             android:layout_marginTop="10dp"
             android:background="@color/white_smoke"
             android:hint="@string/number"
+            android:textColorHint="@color/gray"
             android:inputType="phone"
             android:padding="5dp" />
 
@@ -106,6 +110,7 @@
             android:layout_marginTop="120dp"
             android:backgroundTint="@color/lapis_lazuli"
             android:text="@string/continuar"
+            android:onClick="continuar"
             android:textSize="20sp" />
 
         <LinearLayout
@@ -127,6 +132,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
                 android:text="@string/init_session"
+                android:id="@+id/tv_iniciar_sessao"
                 android:textColor="@color/african_violet" />
 
         </LinearLayout>

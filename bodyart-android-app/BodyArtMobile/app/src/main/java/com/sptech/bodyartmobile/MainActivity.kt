@@ -12,6 +12,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val tvRedefinir = findViewById<TextView>(R.id.tv_fgt_pswd)
+
+        tvRedefinir.setOnClickListener{
+            val telaRedefinir = Intent(applicationContext, RedefinirSenha::class.java)
+            startActivity(telaRedefinir)
+        }
     }
 
     fun login(componente:View){
@@ -29,15 +37,9 @@ class MainActivity : AppCompatActivity() {
         startActivity(tela2)
     }
 
-    fun redefinirSenha (componente: View){
-        val textRedefinir =findViewById<TextView>(R.id.tv_redef_senha)
-        textRedefinir.setOnClickListener {
-            val myIntent = Intent(applicationContext, RedefinirSenha::class.java)
-            startActivity(myIntent)
 
-           textRedefinir.movementMethod = LinkMovementMethod.getInstance()
-        }
-    }
+
+
 
     fun registrar(componente:View){
         // Criando um obj que permite a navegação para outra Activity

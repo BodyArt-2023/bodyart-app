@@ -34,5 +34,8 @@
     <string name="feed">Feed</string>
     <string name="name_profissional">Nome aqui</string>
     <string name="tv_servicos">Serviços</string>
-    <string name="tv_perto">Perto de mim\n</string>
+    <string name="tv_perto">Perto de mim</string>
+    <string name="error_cadastro_msg">Preencha todos os campos para continuar</string>
+    <string name="et_nascimento">DD/MM/AAAA</string>
+    <string name="et_vazio">Campo obrigatório</string>
 </resources>

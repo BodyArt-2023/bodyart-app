@@ -87,31 +87,16 @@
             android:id="@+id/ll_dt_nasc"
             android:layout_marginTop="20dp">
             <EditText
-                android:layout_width="60dp"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/dia"
+                android:id="@+id/et_nasc"
+                android:hint="@string/et_nascimento"
+                android:textColorHint="@color/gray"
                 android:background="@color/white_smoke"
                 android:paddingVertical="6dp"
                 android:paddingHorizontal="5dp"
+                android:inputType="date"
                 />
-            <EditText
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/mes"
-                android:background="@color/white_smoke"
-                android:paddingVertical="6dp"
-                android:paddingHorizontal="5dp"
-                android:layout_marginLeft="20dp"
-                />
-            <EditText
-            android:layout_width="70dp"
-            android:layout_height="wrap_content"
-            android:hint="@string/ano"
-            android:background="@color/white_smoke"
-            android:paddingVertical="6dp"
-                android:paddingHorizontal="5dp"
-                android:layout_marginLeft="20dp"
-            />
 
         </LinearLayout>
         <CheckBox
@@ -145,7 +130,8 @@
             android:layout_marginTop="150dp"
             android:backgroundTint="@color/lapis_lazuli"
             android:text="@string/cadastrar"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:onClick="cadastrar"/>
     </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
