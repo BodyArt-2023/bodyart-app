@@ -3,6 +3,7 @@ package com.sptech.bodyartmobile
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 
 class HomePage : AppCompatActivity() {
 
@@ -15,14 +16,14 @@ class HomePage : AppCompatActivity() {
 
         // Inicializando a Text View
         tvAutenticacao= findViewById(R.id.tv_autenticado)
-        // validarAutenticacao()
+        validarAutenticacao()
     }
 
     fun validarAutenticacao(){
-        val login = intent.getStringExtra("login")
-        val senha = intent.getStringExtra("senha")
+        val nome = intent.getStringExtra("nome")
 
-        // Precisa-se da api com usuários
+
+        Toast.makeText(baseContext, getString(R.string.msg_boas_vindas, nome), Toast.LENGTH_SHORT).show()
 
     }
 }

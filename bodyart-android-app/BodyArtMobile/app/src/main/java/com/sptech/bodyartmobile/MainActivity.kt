@@ -4,11 +4,20 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
+import android.util.Log
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import com.sptech.bodyartmobile.retrofit.Apis
+import com.sptech.bodyartmobile.retrofit.model.request.LoginRequest
+import com.sptech.bodyartmobile.retrofit.model.response.UsuarioResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
+    val authApi = Apis.getAuthApi()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,12 +38,34 @@ class MainActivity : AppCompatActivity() {
         val login = findViewById<EditText>(R.id.et_email).text.toString()
         val senha = findViewById<EditText>(R.id.et_senha).text.toString()
 
-        // Envio de dados
-        tela2.putExtra("login", login)
-        tela2.putExtra("senha", senha)
+        val loginRequest = LoginRequest(login, senha)
 
-        // Iniciando a Home Page
-        startActivity(tela2)
+        val post = authApi.login(loginRequest)
+
+        post.enqueue(object : Callback<UsuarioResponse>{
+            override fun onResponse(
+                call: Call<UsuarioResponse>,
+                response: Response<UsuarioResponse>
+            ) {
+                if(response.isSuccessful){
+                    // Envio de dados
+                    tela2.putExtra("nome", response.body()?.nome)
+
+                    // Iniciando a Home Page
+                    startActivity(tela2)
+                }
+                else {
+                    Toast.makeText(baseContext, R.string.msg_erro_login, Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<UsuarioResponse>, t: Throwable) {
+                Toast.makeText(baseContext, R.string.msg_erro_api, Toast.LENGTH_SHORT).show()
+            }
+
+        })
+
+
     }
 
 

@@ -38,4 +38,7 @@
     <string name="error_cadastro_msg">Preencha todos os campos para continuar</string>
     <string name="et_nascimento">DD/MM/AAAA</string>
     <string name="et_vazio">Campo obrigatório</string>
+    <string name="msg_boas_vindas">Bem vindo(a) %1s</string>
+    <string name="msg_erro_api">Erro ao se conectar</string>
+    <string name="msg_erro_login">Login e/ou senha inválidos</string>
 </resources>
