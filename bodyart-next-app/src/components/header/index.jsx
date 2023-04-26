@@ -1,65 +1,105 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { Button } from "../common/Buttons";
 import Label from "../common/Label";
 import logoLavanda from "public/images/logos/logolavandawithtext.svg";
 import { Link as LinkScroll } from "react-scroll";
 import { useRouter } from "next/router";
-
-const OPTIONS_CONSUMIDOR = {
-  accessEnabled: {
-    //COM DASHBOARD E OPÇÕES
-  },
-  accessDisabled: {
-    optionsLeft: [
-      {
-        label: "Home",
-        toScroll: "homeCliente",
-        to: "/",
-      },
-      {
-        label: "Catálogo",
-        toScroll: "catalogoCliente",
-        to: "/",
-      },
-      {
-        label: "Feed",
-        toScroll: "feedCliente",
-        to: "/feed",
-      },
-      {
-        label: "Buscar",
-        toScroll: "buscarCliente",
-        to: "/buscar",
-      },
-    ],
-    optionsRight: [
-      {
-        label: "Para Profissionais",
-        to: "",
-        themeButton: "transparentLapisLazuli",
-      },
-      {
-        label: "Acessar",
-        to: "/acessar",
-      },
-    ],
-  },
-};
-
-const OPTIONS_PROFISSIONAL = {
-  accessEnabled: {
-    //COM DASHBOARD E OPÇÕES
-  },
-  accessDisabled: {
-    optionsLeft: [],
-    optionsRight: [],
-  },
-};
+import UserContext from "@/context/userContext";
+import FotoDePerfil from "../varied/FotoDePerfil";
 
 export default function Header({ className }) {
   const router = useRouter();
+  const [userContext, setUserContext] = useContext(UserContext);
+
+  const OPTIONS_CONSUMIDOR = {
+    accessEnabled: {
+      //COM DASHBOARD E OPÇÕES
+    },
+    accessDisabled: {
+      optionsLeft: [
+        {
+          label: "Home",
+          toScroll: "homeCliente",
+          to: "/",
+          condicao: true,
+        },
+        {
+          label: "Catálogo",
+          toScroll: "catalogoCliente",
+          to: "/",
+          condicao: true,
+        },
+        {
+          label: "Feed",
+          toScroll: "feedCliente",
+          to: "/feed",
+          condicao: true,
+        },
+        {
+          label: "Buscar",
+          toScroll: "buscarCliente",
+          to: "/buscar",
+          condicao: true,
+        },
+      ],
+      optionsRight: [
+        {
+          label: "Para Profissionais",
+          to: "/profissional",
+          themeButton: "transparentLapisLazuli",
+          condicao: true,
+        },
+        {
+          label: "Acessar",
+          to: "/acessar",
+          condicao: true,
+        },
+      ],
+    },
+  };
+
+  const OPTIONS_PROFISSIONAL = {
+    accessEnabled: {
+      //COM DASHBOARD E OPÇÕES
+    },
+    accessDisabled: {
+      optionsLeft: [
+        {
+          label: "Home",
+          toScroll: "homeProfissional",
+          to: "/profissional",
+          condicao: true,
+        },
+        {
+          label: "Como funciona?",
+          toScroll: "comoFunciona",
+          to: "/profissional",
+          condicao: true,
+        },
+      ],
+      optionsRight: [
+        {
+          label: "Para Clientes",
+          to: "/",
+          themeButton: "transparentLapisLazuli",
+          condicao: true,
+        },
+        {
+          label: "Dashboard",
+          to: "/profissional/dashboard",
+          themeButton: "transparentLapisLazuli",
+          condicao: userContext?.profissional,
+        },
+        {
+          label: "Acessar",
+          to: "/profissional/acessar",
+          condicao: true,
+        },
+      ],
+    },
+  };
 
   useEffect(() => {}, [router.pathname]);
 
@@ -67,61 +107,132 @@ export default function Header({ className }) {
     <StyledHeader className={className}>
       <StyledNav className="container">
         <StyledUl>
-          {OPTIONS_CONSUMIDOR.accessDisabled.optionsLeft.map((option) => (
-            <StyledLi
-              key={option.label}
-              onClick={() => {
-                if (router.pathname !== option.to) {
-                  setTimeout(() => {
-                    let linkScroll = document.getElementById(
-                      `linkScroll${option.toScroll}`
-                    );
+          {router.pathname.split("/")[1] !== "profissional"
+            ? OPTIONS_CONSUMIDOR.accessDisabled.optionsLeft.map((option) => (
+                <StyledLi
+                  key={option.label}
+                  onClick={() => {
+                    if (router.pathname !== option.to) {
+                      setTimeout(() => {
+                        let linkScroll = document.getElementById(
+                          `linkScroll${option.toScroll}`
+                        );
 
-                    return linkScroll ? linkScroll.click() : null;
-                  }, 150);
-                }
+                        return linkScroll ? linkScroll.click() : null;
+                      }, 150);
+                    }
 
-                return router.pathname === option.to
-                  ? null
-                  : router.push(option.to);
-              }}
-            >
-              {router.pathname === option.to ? (
-                <LinkScroll
-                  id={`linkScroll${option.toScroll}`}
-                  activeClass="activeHeader"
-                  to={option.toScroll}
-                  spy={true}
-                  smooth={true}
-                  offset={-80.01}
-                  duration={110}
+                    return router.pathname === option.to
+                      ? null
+                      : router.push(option.to);
+                  }}
                 >
-                  {option?.component ? option?.component : option?.label}
-                </LinkScroll>
-              ) : (
-                option.label
-              )}
-            </StyledLi>
-          ))}
+                  {router.pathname === option.to ? (
+                    <LinkScroll
+                      id={`linkScroll${option.toScroll}`}
+                      activeClass="activeHeader"
+                      to={option.toScroll}
+                      spy={true}
+                      smooth={true}
+                      offset={-80.01}
+                      duration={110}
+                    >
+                      {option?.component ? option?.component : option?.label}
+                    </LinkScroll>
+                  ) : (
+                    option.label
+                  )}
+                </StyledLi>
+              ))
+            : OPTIONS_PROFISSIONAL.accessDisabled.optionsLeft.map((option) => (
+                <StyledLi
+                  key={option.label}
+                  onClick={() => {
+                    if (router.pathname !== option.to) {
+                      setTimeout(() => {
+                        let linkScroll = document.getElementById(
+                          `linkScroll${option.toScroll}`
+                        );
+
+                        return linkScroll ? linkScroll.click() : null;
+                      }, 150);
+                    }
+
+                    return router.pathname === option.to
+                      ? null
+                      : router.push(option.to);
+                  }}
+                >
+                  {router.pathname === option.to ? (
+                    <LinkScroll
+                      id={`linkScroll${option.toScroll}`}
+                      activeClass="activeHeader"
+                      to={option.toScroll}
+                      spy={true}
+                      smooth={true}
+                      offset={-80.01}
+                      duration={110}
+                    >
+                      {option?.component ? option?.component : option?.label}
+                    </LinkScroll>
+                  ) : (
+                    option.label
+                  )}
+                </StyledLi>
+              ))}
         </StyledUl>
 
         <StyledLogo src={logoLavanda} width="95" alt="" />
         <StyledUl>
-          {OPTIONS_CONSUMIDOR.accessDisabled.optionsRight.map((option) => (
-            <StyledLi key={option.label}>
-              {option?.component ? (
-                option?.component
-              ) : (
-                <Button
-                  style={{ fontSize: "0.95rem" }}
-                  themeButton={option?.themeButton}
-                  onClick={() => router.push(option.to)}
-                >
-                  {option.label}
-                </Button>
-              )}
-            </StyledLi>
-          ))}
+          {router.pathname.split("/")[1] !== "profissional"
+            ? OPTIONS_CONSUMIDOR.accessDisabled.optionsRight.map((option) => (
+                <StyledLi key={option.label}>
+                  {userContext && option.label === "Acessar" ? (
+                    <FotoDePerfil
+                      onClick={() =>
+                        router.pathname.split("/")[1] === "profissional"
+                          ? router.push("/profissional/usuario")
+                          : router.push("/usuario")
+                      }
+                      username={userContext?.nome.split(" ")[0]}
+                      image={userContext?.fotoPerfilPath}
+                      size="1.9rem"
+                    />
+                  ) : (
+                    <Button
+                      style={{ fontSize: "0.95rem" }}
+                      themeButton={option?.themeButton}
+                      onClick={() => router.push(option.to)}
+                    >
+                      {option.label}
+                    </Button>
+                  )}
+                </StyledLi>
+              ))
+            : OPTIONS_PROFISSIONAL.accessDisabled.optionsRight.map((option) => (
+                <StyledLi key={option.label}>
+                  {userContext && option.label === "Acessar" ? (
+                    <FotoDePerfil
+                      onClick={() =>
+                        router.pathname.split("/")[1] === "profissional"
+                          ? router.push("/profissional/usuario")
+                          : router.push("/usuario")
+                      }
+                      username={userContext?.nome.split(" ")[0]}
+                      image={userContext?.fotoPerfilPath}
+                      size="1.9rem"
+                    />
+                  ) : option.condicao ? (
+                    <Button
+                      style={{ fontSize: "0.95rem" }}
+                      themeButton={option?.themeButton}
+                      onClick={() => router.push(option.to)}
+                    >
+                      {option.label}
+                    </Button>
+                  ) : null}
+                </StyledLi>
+              ))}
         </StyledUl>
       </StyledNav>
     </StyledHeader>

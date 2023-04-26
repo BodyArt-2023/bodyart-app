@@ -76,7 +76,6 @@ export default function Cadastro({ onClickLabel, isOpen, setCadastroIsOpen }) {
       inputs={INPUTS_CADASTRO}
       buttonsGenero={BUTTONS_GENERO}
       onSubmitForm={(data) => {
-        console.log(data);
         api
           .post(`/usuarios/cliente`, data)
           .then((res) => {

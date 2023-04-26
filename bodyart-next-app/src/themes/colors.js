@@ -5,6 +5,8 @@ export const COLORS = {
   african_violet: "#A286C1",
   light_blue: "#AFDBE6",
   lapis_lazuli: "#23699D",
+  lima: "#32cd32",
+  lava: "#cf1020",
 
   // CORES BLACK AND WHITE
   white: "#FFFFFF",

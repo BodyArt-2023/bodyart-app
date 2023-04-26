@@ -23,7 +23,10 @@ export const Button = styled.button.attrs({ className: "btn" })`
     border: ${({ theme, themeButton }) =>
       theme.buttons[themeButton ? themeButton : "default"].disabled.border
         ? theme.buttons[themeButton ? themeButton : "default"].disabled.border
-        : null} !important;
+        : theme.buttons[themeButton ? themeButton : "default"].disabled
+            .background} !important;
+    opacity: ${({ disabledOpacity }) =>
+      disabledOpacity ? disabledOpacity : null};
   }
   :hover {
     background-color: ${({ theme, themeButton }) =>

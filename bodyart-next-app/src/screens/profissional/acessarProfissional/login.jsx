@@ -72,7 +72,7 @@ export default function Login({ isOpen, onClickLabel }) {
             setUserContext(res.data);
             fetchGaleria(res.data.id);
             toast.success("Login efetuado!");
-            router.push("/");
+            router.push("/profissional");
           })
           .catch((erro) => {
             toast.warning("Usuário inválido ou inexistente!");

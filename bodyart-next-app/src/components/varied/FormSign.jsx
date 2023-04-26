@@ -14,6 +14,7 @@ export default function FormSign({
   onSubmitForm,
   inputs,
   buttonsGenero,
+  buttonSubmitTrigger,
 }) {
   const [genero, setGenero] = useState(null);
   const { register, handleSubmit, setValue, reset } = useForm();
@@ -22,25 +23,31 @@ export default function FormSign({
 
   return (
     <StyledForm onSubmit={handleSubmit(onSubmit)} isOpen={isOpen}>
-      <div className="flex flex-row justify-between items-center w-96">
-        <Label
-          text={labelUpLeft}
-          fontColor="lapis_lazuli"
-          fontSize="1.5rem"
-          fontWeight="600"
-        />
+      {labelUpLeft || labelUpRight ? (
+        <div className="flex flex-row justify-between items-center w-96">
+          {labelUpLeft ? (
+            <Label
+              text={labelUpLeft}
+              fontColor="lapis_lazuli"
+              fontSize="1.5rem"
+              fontWeight="600"
+            />
+          ) : null}
 
-        <StyledLabel
-          text={labelUpRight}
-          fontSize="0.8rem"
-          fontWeight="400"
-          onClick={onClickLabel}
-        />
-      </div>
+          {labelUpRight ? (
+            <StyledLabel
+              text={labelUpRight}
+              fontSize="0.8rem"
+              fontWeight="400"
+              onClick={onClickLabel}
+            />
+          ) : null}
+        </div>
+      ) : null}
       {inputs
         ? inputs.map((input) => (
             <div key={input.label}>
-              {input.type === "date" ? (
+              {input.type === "date" || input.type === "time" ? (
                 <StyledInput
                   name={input.name}
                   placeholder={input.placeholder}
@@ -48,8 +55,8 @@ export default function FormSign({
                   autoComplete={input.autoComplete}
                   autoFocus={input.autoFocus}
                   innerRef={input.ref}
-                  onMouseEnter={(ev) => (ev.target.type = "date")}
-                  onMouseLeave={(ev) => (ev.target.type = "text")}
+                  onFocus={(ev) => (ev.target.type = input.type)}
+                  onBlurCapture={(ev) => (ev.target.type = "text")}
                   {...register(input.name)}
                 />
               ) : (
@@ -85,12 +92,20 @@ export default function FormSign({
           ))}
         </div>
       ) : null}
-      <div className="flex flex-row justify-between items-center">
-        <StyledLabel text={labelDownLeft} fontSize="0.8rem" fontWeight="400" />
-        <Button className="btn-sm" type="submit">
-          {labelDownRight}
-        </Button>
-      </div>
+      {buttonSubmitTrigger ? (
+        buttonSubmitTrigger
+      ) : (
+        <div className="flex flex-row justify-between items-center">
+          <StyledLabel
+            text={labelDownLeft}
+            fontSize="0.8rem"
+            fontWeight="400"
+          />
+          <Button className="btn-sm" type="submit">
+            {labelDownRight}
+          </Button>
+        </div>
+      )}
     </StyledForm>
   );
 }

@@ -55,11 +55,23 @@ Scroll CSS
 }
 
 *::-webkit-scrollbar-track {
-  background: whitesmoke;
+  background: #303030;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #303030;
+  background-color: #23699d;
   border-radius: 10px;
-  border: 1.5px solid whitesmoke;
+  border: 1.5px solid #303030;
+}
+
+.hoverFotoDePerfil:hover label {
+  background-color: whitesmoke;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+}
+
+.hoverFotoDePerfil:hover span {
+  transition: 0.1s;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04))
+    drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
 }

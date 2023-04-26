@@ -2,10 +2,10 @@ import Article from "@/components/common/Article";
 import Section from "@/components/common/Section";
 import React, { useState } from "react";
 import styled from "styled-components";
-import CadastroCliente from "./cadastro";
-import LoginCliente from "./login";
+import CadastroProfissional from "./cadastro";
+import LoginProfissional from "./login";
 
-export default function AcessarCliente() {
+export default function AcessarProfissional() {
   const [cadastroIsOpen, setCadastroIsOpen] = useState(false);
 
   return (
@@ -14,13 +14,13 @@ export default function AcessarCliente() {
       <StyledContainerPolygon className="px-40 py-10">
         <Article className="w-full h-full flex flex-col justify-center items-center">
           {cadastroIsOpen ? (
-            <CadastroCliente
+            <CadastroProfissional
               onClickLabel={() => setCadastroIsOpen(false)}
               isOpen={cadastroIsOpen}
               setCadastroIsOpen={setCadastroIsOpen}
             />
           ) : (
-            <LoginCliente
+            <LoginProfissional
               onClickLabel={() => setCadastroIsOpen(true)}
               isOpen={!cadastroIsOpen}
             />
