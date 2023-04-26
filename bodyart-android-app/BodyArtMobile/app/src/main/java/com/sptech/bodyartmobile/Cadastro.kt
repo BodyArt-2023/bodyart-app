@@ -32,7 +32,7 @@ class Cadastro : AppCompatActivity() {
 
         val email = findViewById<EditText>(R.id.et_email)
 
-        val senha = findViewById<EditText>(R.id.et_senha)
+        val senha = findViewById<EditText>(R.id.et_pswd)
 
         val numero = findViewById<EditText>(R.id.et_number)
 
@@ -52,7 +52,11 @@ class Cadastro : AppCompatActivity() {
             numero.error = getString(R.string.et_vazio)
         }
         else {
-//            NÃO ESQUECER DE GUARDAR OS DADOS !!!!!!!
+            continuarCadastro.putExtra("nome", nome.text.toString())
+            continuarCadastro.putExtra("email", email.text.toString())
+            continuarCadastro.putExtra("senha", senha.text.toString())
+            continuarCadastro.putExtra("numero", numero.text.toString())
+
 
             startActivity(continuarCadastro)
         }

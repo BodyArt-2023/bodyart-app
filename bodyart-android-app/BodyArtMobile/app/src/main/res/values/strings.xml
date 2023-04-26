@@ -41,4 +41,6 @@
     <string name="msg_boas_vindas">Bem vindo(a) %1s</string>
     <string name="msg_erro_api">Erro ao se conectar</string>
     <string name="msg_erro_login">Login e/ou senha inválidos</string>
+    <string name="msg_cadastro_realizado">Cadastro realizado com sucesso!</string>
+    <string name="msg_cadastro_nao_realizado">Erro ao se cadastrar</string>
 </resources>

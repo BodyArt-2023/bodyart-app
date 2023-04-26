@@ -54,19 +54,22 @@
                android:layout_height="wrap_content"
                android:text="@string/masculino"
                android:textColor="@color/white_smoke"
-               android:textSize="20sp"/>
+               android:textSize="20sp"
+               android:id="@+id/opcao_m"/>
            <RadioButton
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="@string/feminino"
                android:textColor="@color/white_smoke"
-               android:textSize="20sp"/>
+               android:textSize="20sp"
+               android:id="@+id/opcao_f"/>
            <RadioButton
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:text="@string/outro"
                android:textColor="@color/white_smoke"
-               android:textSize="20sp"/>
+               android:textSize="20sp"
+               android:id="@+id/opcao_o"/>
        </RadioGroup>
 
         <TextView
@@ -96,6 +99,7 @@
                 android:paddingVertical="6dp"
                 android:paddingHorizontal="5dp"
                 android:inputType="date"
+
                 />
 
         </LinearLayout>
