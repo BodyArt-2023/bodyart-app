@@ -82,6 +82,7 @@
             android:textColor="@color/white_smoke"
             android:textSize="20sp"
             android:layout_marginTop="20dp"/>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -101,8 +102,21 @@
                 android:inputType="date"
 
                 />
+<!--            <DatePicker-->
+<!--                android:calendarViewShown="false"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/et_nasc"-->
+<!--                android:datePickerMode="spinner"-->
+<!--                android:calendarTextColor="@color/gray"-->
+<!--                android:background="@color/white_smoke"-->
+<!--                android:paddingVertical="6dp"-->
+<!--                android:paddingHorizontal="5dp"-->
+<!--                />-->
+
 
         </LinearLayout>
+
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
