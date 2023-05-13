@@ -99,8 +99,8 @@
                 android:background="@color/white_smoke"
                 android:paddingVertical="6dp"
                 android:paddingHorizontal="5dp"
-                android:inputType="date"
-
+                android:inputType="none"
+                android:editable="false"
                 />
 <!--            <DatePicker-->
 <!--                android:calendarViewShown="false"-->

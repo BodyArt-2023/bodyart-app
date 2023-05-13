@@ -1,16 +1,19 @@
 package com.sptech.bodyartmobile
 
+import android.app.DatePickerDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.sptech.bodyartmobile.retrofit.Apis
 import com.sptech.bodyartmobile.retrofit.model.request.UsuarioRequest
 import com.sptech.bodyartmobile.retrofit.model.response.UsuarioResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
 
 class Cadastro2 : AppCompatActivity() {
     val usuarioApi = Apis.getUsuarioAop()
@@ -22,6 +25,22 @@ class Cadastro2 : AppCompatActivity() {
         voltar.setOnClickListener{
             val telaAnterior = Intent(applicationContext, MainActivity::class.java)
             startActivity(telaAnterior)
+        }
+
+        val inputDate = findViewById<EditText>(R.id.et_nasc)
+
+        inputDate.setOnClickListener{
+            val calendar = Calendar.getInstance()
+
+            val diaAtual = calendar.get(Calendar.DAY_OF_MONTH)
+            val mesAtual = calendar.get(Calendar.MONTH)
+            val anoAtual = calendar.get(Calendar.YEAR)
+
+            DatePickerDialog(this, R.style.SpinnerDatePickerDialogTheme, {
+                    _, i, i2, i3 -> inputDate.setText("${i3.toString().padStart(2, '0')}/${i2.toString().padStart(2, '0')}/$i") },
+                anoAtual, mesAtual, diaAtual).show()
+
+
         }
 
     }
@@ -48,10 +67,11 @@ class Cadastro2 : AppCompatActivity() {
             val genero = when(generoSelecionado){
                 R.id.opcao_m -> 'M'
                 R.id.opcao_f -> 'F'
-                else -> {'O'}
+                R.id.opcao_o -> 'O'
+                else -> {' '}
             }
 
-            val dataNascimento = nascimento.text.toString().split("-").reversed().joinToString("-")
+            val dataNascimento = nascimento.text.toString().split("/").reversed().joinToString("-")
             val usuarioRequest = UsuarioRequest(nome, email, senha, numero, genero, dataNascimento)
 
             val post = usuarioApi.cadastro(usuarioRequest)
