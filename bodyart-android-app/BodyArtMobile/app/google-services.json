@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417686595258",
+    "project_id": "bodyart-ad0de",
+    "storage_bucket": "bodyart-ad0de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417686595258:android:ac7eeb4991d10aafe54483",
+        "android_client_info": {
+          "package_name": "com.sptech.bodyartmobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417686595258-cnspl9fucoe7qgqtpatni72549sgoggu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdeMSkcxhaQb8zfvuXR0exLdlTjbqWq90"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417686595258-cnspl9fucoe7qgqtpatni72549sgoggu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
