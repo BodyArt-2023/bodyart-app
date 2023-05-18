@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PerfilEstabelecimento">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:background="@color/black_primary">
+
+        <ImageView
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/tattooer" />
+
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="90dp"
+            android:text="@string/back"
+            android:textColor="@color/african_violet"
+            android:textSize="25sp" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_img"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@+id/background"
+            android:layout_marginTop="-50dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/round_image"
+            android:scaleType="fitXY"
+            android:src="@drawable/homitatoo"
+            app:shapeAppearanceOverlay="@style/circleimage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/nome_profissional"
+            android:text="@string/nome_profissional"
+            android:textColor="@color/white_smoke"
+            android:textSize="20sp"
+            android:layout_below="@+id/background"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/avaliacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nome_profissional"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="70dp"
+            android:text="@string/avaliacao"
+            android:textColor="@color/white_smoke"
+            android:layout_alignStart="@+id/background"
+            android:textSize="40sp"/>
+        <TextView
+            android:id="@+id/txt_avaliacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/atendimentos"
+            android:layout_alignStart="@+id/avaliacao"
+            android:text="@string/nome_servico"
+            android:textColor="@color/white_smoke"
+            android:textSize="15sp"/>
+
+
+        <Button
+            android:layout_width="2dp"
+            android:layout_height="90dp"
+            android:layout_below="@id/nome_profissional"
+            android:layout_centerHorizontal="true"
+            android:backgroundTint="@color/white_smoke"
+            android:layout_marginTop="10dp"
+            android:clickable="false"
+            android:id="@+id/separador"/>
+
+        <TextView
+            android:id="@+id/atendimentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nome_profissional"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="70dp"
+            android:layout_alignEnd="@+id/background"
+            android:text="@string/atendimentos_qtd"
+            android:textColor="@color/white_smoke"
+            android:textSize="40sp"/>
+        <TextView
+            android:id="@+id/txt_atendimentos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/atendimentos"
+            android:layout_alignStart="@+id/atendimentos"
+            android:text="@string/atendimentos"
+            android:textColor="@color/white_smoke"
+            android:textSize="15sp"/>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_agendar"
+            android:text="@string/agendar"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/atendimentos"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="@color/lapis_lazuli"/>
+
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:id="@+id/grid_portifolio"
+            android:layout_below="@id/btn_agendar"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            >
+
+            <!-- Adicione os elementos de layout dentro do GridLayout -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:src="@drawable/tattoo1"
+                app:shapeAppearanceOverlay="@style/roundedimage" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:src="@drawable/tattoo2"
+                app:shapeAppearanceOverlay="@style/roundedimage" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:src="@drawable/tattoo3"
+                app:shapeAppearanceOverlay="@style/roundedimage" />
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="fitXY"
+                android:layout_margin="5dp"
+                android:src="@drawable/tattoo4"
+                app:shapeAppearanceOverlay="@style/roundedimage" />
+
+
+            <!-- Adicione mais elementos de layout aqui -->
+
+        </GridLayout>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/grid_portifolio"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/background"
+                    android:layout_marginTop="-50dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/round_image"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/homitatoo"
+                    app:shapeAppearanceOverlay="@style/roundedimage" />
+
+                <TextView
+                    android:id="@+id/nameTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Nome do Item"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:rating="4.5"
+                    android:stepSize="0.5" />
+
+                <TextView
+                    android:id="@+id/descriptionTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Descrição do Item" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
