@@ -13,10 +13,16 @@ import com.sptech.bodyartmobile.retrofit.model.response.UsuarioResponse
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class Cadastro2 : AppCompatActivity() {
+
+    lateinit var dataNascimento:LocalDate
     val usuarioApi = Apis.getUsuarioAop()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro2)
@@ -30,14 +36,20 @@ class Cadastro2 : AppCompatActivity() {
         val inputDate = findViewById<EditText>(R.id.et_nasc)
 
         inputDate.setOnClickListener{
-            val calendar = Calendar.getInstance()
+            val calendar = LocalDate.now()
 
-            val diaAtual = calendar.get(Calendar.DAY_OF_MONTH)
-            val mesAtual = calendar.get(Calendar.MONTH)
-            val anoAtual = calendar.get(Calendar.YEAR)
+            val diaAtual = calendar.dayOfMonth
+            val mesAtual = calendar.month.value-1
+            val anoAtual = calendar.year
 
             DatePickerDialog(this, R.style.SpinnerDatePickerDialogTheme, {
-                    _, i, i2, i3 -> inputDate.setText("${i3.toString().padStart(2, '0')}/${i2.toString().padStart(2, '0')}/$i") },
+                    _, i, i2, i3 ->
+                run {
+                    dataNascimento = LocalDate.of(i, i2+1, i3)
+                    // inputDate.setText("${i3.toString().padStart(2, '0')}/${i2.toString().padStart(2, '0')}/$i")
+                    inputDate.setText(dataNascimento.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+                }
+            },
                 anoAtual, mesAtual, diaAtual).show()
 
 
@@ -71,8 +83,8 @@ class Cadastro2 : AppCompatActivity() {
                 else -> {' '}
             }
 
-            val dataNascimento = nascimento.text.toString().split("/").reversed().joinToString("-")
-            val usuarioRequest = UsuarioRequest(nome, email, senha, numero, genero, dataNascimento)
+            //val dataNascimento = nascimento.text.toString().split("/").reversed().joinToString("-")
+            val usuarioRequest = UsuarioRequest(nome, email, senha, numero, genero, dataNascimento.toString())
 
             val post = usuarioApi.cadastro(usuarioRequest)
 

@@ -43,6 +43,12 @@
     <string name="msg_erro_login">Login e/ou senha inválidos</string>
     <string name="msg_cadastro_realizado">Cadastro realizado com sucesso!</string>
     <string name="msg_cadastro_nao_realizado">Erro ao se cadastrar</string>
+    <string name="nome_profissional">Rogério Flores</string>
+    <string name="avaliacao">5.00</string>
+    <string name="agendar">Agendar</string>
+    <string name="atendimentos">Atendimentos</string>
+    <string name="nome_servico">Tatuagem</string>
+    <string name="atendimentos_qtd">254</string>
     <string name="et_top_10">Top 10</string>
     <string name="et_melhor_classificacao">Melhor classificaçao</string>
     <string name="et_mais_procurados">Mais procurados</string>
