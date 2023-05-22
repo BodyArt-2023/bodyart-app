@@ -43,4 +43,13 @@
     <string name="msg_erro_login">Login e/ou senha inválidos</string>
     <string name="msg_cadastro_realizado">Cadastro realizado com sucesso!</string>
     <string name="msg_cadastro_nao_realizado">Erro ao se cadastrar</string>
+    <string name="et_top_10">Top 10</string>
+    <string name="et_melhor_classificacao">Melhor classificaçao</string>
+    <string name="et_mais_procurados">Mais procurados</string>
+    <string name="et_filtros">Filtros</string>
+    <string name="tv_service">Serviço</string>
+    <string name="et_description">Descrição do serviço realizado</string>
+    <string name="btn_open">Abrir</string>
+    <string name="btn_see_more">Saiba mais</string>
+    <string name="et_nota">0.0</string>
 </resources>
