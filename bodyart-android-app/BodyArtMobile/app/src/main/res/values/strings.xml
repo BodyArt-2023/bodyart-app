@@ -58,4 +58,6 @@
     <string name="btn_open">Abrir</string>
     <string name="btn_see_more">Saiba mais</string>
     <string name="et_nota">0.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

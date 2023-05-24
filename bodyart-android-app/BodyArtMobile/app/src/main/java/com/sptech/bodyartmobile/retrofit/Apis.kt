@@ -1,6 +1,8 @@
 package com.sptech.bodyartmobile.retrofit
 
 import com.sptech.bodyartmobile.retrofit.api.AuthApi
+import com.sptech.bodyartmobile.retrofit.api.CategoriaApi
+import com.sptech.bodyartmobile.retrofit.api.ServicoApi
 import com.sptech.bodyartmobile.retrofit.api.UsuarioApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -24,5 +26,23 @@ object Apis {
             .build()
 
         return retrofit.create(UsuarioApi::class.java)
+    }
+
+    fun getServicoApi() : ServicoApi {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+
+        return retrofit.create(ServicoApi::class.java)
+    }
+
+    fun getCategoriaApi() : CategoriaApi {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+
+        return retrofit.create(CategoriaApi::class.java)
     }
 }
