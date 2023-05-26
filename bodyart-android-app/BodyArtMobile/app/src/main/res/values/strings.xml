@@ -49,16 +49,15 @@
     <string name="atendimentos">Atendimentos</string>
     <string name="nome_servico">Tatuagem</string>
     <string name="atendimentos_qtd">254</string>
-    <string name="et_top_10">Top 10</string>
-    <string name="et_melhor_classificacao">Melhor classificaçao</string>
-    <string name="et_mais_procurados">Mais procurados</string>
-    <string name="et_filtros">Filtros</string>
-    <string name="tv_service">Serviço</string>
-    <string name="et_description">Descrição do serviço realizado</string>
+    <string name="tv_todos">Todos</string>
+    <string name="tv_ver_todos">Ver todos</string>
+    <string name="tv_avaliacao">Avaliação</string>
+    <string name="tv_a_z">A-Z</string>
+    <string name="tv_categoria">Categoria</string>
+    <string name="tv_estabelecimento">Estabelecimento</string>
+    <string name="et_description">Descrição do estabelecimento ou serviços prestados</string>
     <string name="btn_open">Abrir</string>
     <string name="btn_see_more">Saiba mais</string>
     <string name="meus_agendamentos">Meus agendamentos</string>
     <string name="et_nota">0.0</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
