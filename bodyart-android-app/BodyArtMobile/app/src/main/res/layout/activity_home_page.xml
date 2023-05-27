@@ -262,7 +262,6 @@
           android:layout_width="match_parent"
           android:layout_height="150dp"
           android:id="@+id/hsv_perto"
-          android:layout_marginTop="-20dp"
           android:layout_below="@id/tv_perto">
 
          <LinearLayout

@@ -147,6 +147,7 @@
                 android:layout_margin="5dp"
                 android:src="@mipmap/tattoo2"
                 app:shapeAppearanceOverlay="@style/roundedimage" />
+
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
@@ -169,54 +170,113 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/cv_avaliacao1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@id/grid_portifolio"
+            android:backgroundTint="@color/white_smoke"
+            android:layout_marginTop="20dp"
             app:cardCornerRadius="8dp"
             app:cardElevation="4dp"
             app:cardUseCompatPadding="true">
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
-                android:orientation="vertical"
+                android:layout_height="wrap_content"
                 android:padding="16dp">
 
                 <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_perfil_cli"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:layout_below="@+id/background"
-                    android:layout_marginTop="-50dp"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/round_image"
                     android:scaleType="fitXY"
                     android:src="@mipmap/homitatoo"
-                    app:shapeAppearanceOverlay="@style/roundedimage" />
+                    app:shapeAppearanceOverlay="@style/circleimage" />
 
                 <TextView
+                    android:layout_below="@id/img_perfil_cli"
                     android:id="@+id/nameTextView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome do Item"
-                    android:textSize="18sp"
+                    android:text="Nome do Cliente"
+                    android:layout_alignStart="@id/img_perfil_cli"
+                    android:layout_marginTop="20dp"
+                    android:gravity="end"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
 
                 <RatingBar
+                    android:layout_alignParentEnd="true"
                     android:id="@+id/ratingBar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:isIndicator="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
                     android:numStars="5"
-                    android:rating="4.5"
+                    android:rating="4"
+                    android:scaleY="0.7"
+                    android:scaleX="0.7"
                     android:stepSize="0.5" />
 
-                <TextView
-                    android:id="@+id/descriptionTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Descrição do Item" />
+            </RelativeLayout>
 
-            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cv_avaliacao1"
+            android:backgroundTint="@color/white_smoke"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="4dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_perfil_cliw"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/round_image"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/homitatoo"
+                    app:shapeAppearanceOverlay="@style/circleimage" />
+
+                <TextView
+                    android:layout_below="@id/img_perfil_cliw"
+                    android:id="@+id/nameTextVieww"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome do Cliente"
+                    android:layout_alignStart="@id/img_perfil_cliw"
+                    android:layout_marginTop="20dp"
+                    android:gravity="end"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <RatingBar
+                    android:layout_alignParentEnd="true"
+                    android:id="@+id/ratingBar2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="30dp"
+                    android:numStars="5"
+                    android:rating="4"
+                    android:scaleY="0.7"
+                    android:scaleX="0.7"
+                    android:stepSize="0.5" />
+
+            </RelativeLayout>
 
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
