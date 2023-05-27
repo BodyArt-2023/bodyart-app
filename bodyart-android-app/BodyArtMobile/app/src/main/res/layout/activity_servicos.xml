@@ -39,67 +39,11 @@
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <HorizontalScrollView
-            android:id="@+id/hsv_navbar_services"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_below="@+id/ll_header_services">
-
-            <LinearLayout
-                android:id="@+id/ll_navbar_services"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/et_top10"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/et_top_10"
-                    android:padding="10dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@color/white_smoke"/>
-
-                <EditText
-                    android:id="@+id/et_melhor_classificacao"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/et_melhor_classificacao"
-                    android:padding="10dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@color/white_smoke"/>
-
-                <EditText
-                    android:id="@+id/et_mais_procurados"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/et_mais_procurados"
-                    android:padding="10dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@color/white_smoke"/>
-
-                <EditText
-                    android:id="@+id/et_filtros"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/et_filtros"
-                    android:padding="10dp"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="@color/white_smoke"/>
-
-            </LinearLayout>
-
-        </HorizontalScrollView>
-
         <ScrollView
             android:id="@+id/sv_services"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/hsv_navbar_services"
+            android:layout_below="@+id/ll_header_services"
             android:layout_centerVertical="true">
 
             <LinearLayout
@@ -109,24 +53,25 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/tv_title_service"
+                    android:id="@+id/tv_categoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/tv_service"
+                    android:layout_margin="20dp"
+                    android:text="@string/tv_categoria"
                     android:textColor="@color/white_smoke"
                     android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:layout_margin="20dp"/>
+                    android:textStyle="bold" />
 
                 <HorizontalScrollView
-                    android:layout_below="@id/tv_title_service"
                     android:id="@+id/hsv_service"
                     android:layout_width="match_parent"
-                    android:layout_height="350dp">
+                    android:layout_height="350dp"
+                    android:layout_below="@id/tv_title_service">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
 
                         <LinearLayout
                             android:id="@+id/ll_service"
@@ -142,7 +87,7 @@
                                 android:layout_height="match_parent"
                                 android:orientation="vertical">
 
-                                <EditText
+                                <TextView
                                     android:id="@+id/et_img_service2"
                                     android:layout_width="300dp"
                                     android:layout_height="150dp"
@@ -153,11 +98,11 @@
                                     android:layout_height="100dp"
                                     android:orientation="horizontal">
 
-                                    <EditText
+                                    <TextView
                                         android:id="@+id/et_description_service2"
                                         android:layout_width="150dp"
                                         android:layout_height="match_parent"
-                                        android:layout_marginLeft="15dp"
+                                        android:layout_margin="10dp"
                                         android:text="@string/et_description"
                                         android:textColor="@color/white_smoke"
                                         android:textSize="16sp" />
@@ -166,6 +111,7 @@
                                         android:id="@+id/btn_open_service2"
                                         android:layout_width="120dp"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginTop="30dp"
                                         android:backgroundTint="@color/lapis_lazuli"
                                         android:text="@string/btn_open"
                                         android:textSize="16sp"
@@ -178,7 +124,7 @@
                                     android:layout_height="50dp"
                                     android:orientation="horizontal">
 
-                                    <EditText
+                                    <TextView
                                         android:id="@+id/et_classification_service2"
                                         android:layout_width="50dp"
                                         android:layout_height="match_parent"
@@ -208,9 +154,32 @@
 
                             </LinearLayout>
 
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_ver_mais"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="20dp"
+                            android:background="@color/black_secondary"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="110dp"
+                                android:layout_marginBottom="110dp"
+                                android:text="@string/tv_ver_todos"
+                                android:textAlignment="center"
+                                android:textColor="@color/white_smoke"
+                                android:textSize="32sp"
+                                android:textStyle="bold" />
+
                         </LinearLayout>
 
                     </LinearLayout>
+
 
                 </HorizontalScrollView>
 

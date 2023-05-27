@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
 
         val tvRedefinir = findViewById<TextView>(R.id.tv_fgt_pswd)
 
@@ -62,15 +62,8 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<UsuarioResponse>, t: Throwable) {
                 Toast.makeText(baseContext, R.string.msg_erro_api, Toast.LENGTH_SHORT).show()
             }
-
         })
-
-
     }
-
-
-
-
 
     fun registrar(componente:View){
         // Criando um obj que permite a navegação para outra Activity

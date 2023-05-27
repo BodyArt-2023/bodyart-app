@@ -28,6 +28,14 @@ class Servicos : AppCompatActivity() {
             startActivity(telaAnterior)
         }
 
+        //ir para categoria selecionada
+        val tvCategoria = findViewById<TextView>(R.id.tv_categoria)
+
+        tvCategoria.setOnClickListener{
+            val telaCategoria = Intent(applicationContext, TodosServicos::class.java)
+            startActivity(telaCategoria)
+        }
+
         recuperarCategorias()
     }
 

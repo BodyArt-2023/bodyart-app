@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TodosServicos">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_primary">
+
+        <LinearLayout
+            android:id="@+id/ll_header_categorias"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@mipmap/barbearia"
+            android:orientation="vertical"
+            android:padding="30dp">
+
+            <TextView
+                android:id="@+id/tv_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back"
+                android:textColor="@color/african_violet"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/tv_servicos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_back"
+                android:layout_marginTop="40dp"
+                android:text="@string/tv_categoria"
+                android:textColor="@color/white_smoke"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_filtros_categorias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_header_categorias"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_todos"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="@string/tv_todos"
+                android:textColor="@color/white_smoke"
+                android:textSize="16sp"
+                android:backgroundTint="@color/lapis_lazuli"/>
+
+            <Button
+                android:id="@+id/et_melhor_classificacao"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="@string/tv_avaliacao"
+                android:textColor="@color/white_smoke"
+                android:textSize="16sp"
+                android:backgroundTint="@color/transparent"/>
+
+            <Button
+                android:id="@+id/et_mais_procurados"
+                android:layout_width="125dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:padding="10dp"
+                android:text="@string/tv_a_z"
+                android:textColor="@color/white_smoke"
+                android:textSize="16sp"
+                android:backgroundTint="@color/transparent"/>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:id="@+id/sv_services"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll_filtros_categorias"
+            android:layout_centerVertical="true">
+
+            <LinearLayout
+                android:id="@+id/ll_sv_navbar_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_service"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:background="@color/black_secondary"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title_service"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/tv_estabelecimento"
+                        android:textColor="@color/white_smoke"
+                        android:textSize="30sp"
+                        android:textStyle="bold"
+                        android:layout_margin="20dp"/>
+
+                    <LinearLayout
+                        android:id="@+id/ll_agrup_service"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/et_img_service"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:background="@color/african_violet" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="100dp"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/et_description_service2"
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                android:text="@string/et_description"
+                                android:textColor="@color/white_smoke"
+                                android:textSize="16sp" />
+
+                            <Button
+                                android:id="@+id/btn_open_service2"
+                                android:layout_width="120dp"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/lapis_lazuli"
+                                android:text="@string/btn_open"
+                                android:layout_marginTop="30dp"
+                                android:textSize="16sp"
+                                android:textStyle="bold" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/et_classification_service2"
+                                android:layout_width="50dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="15dp"
+                                android:text="@string/et_nota"
+                                android:textColor="@color/white_smoke"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginRight="30dp"
+                                android:src="@mipmap/star" />
+
+                            <Button
+                                android:id="@+id/btn_see_more2"
+                                android:layout_width="220dp"
+                                android:textAlignment="textEnd"
+                                android:layout_height="wrap_content"
+                                android:backgroundTint="@color/transparent"
+                                android:text="@string/btn_see_more"
+                                android:textColor="@color/gray_dark"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

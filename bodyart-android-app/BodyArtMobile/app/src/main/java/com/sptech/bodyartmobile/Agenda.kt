@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 
-class PerfilEstabelecimento : AppCompatActivity() {
+class Agenda : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_perfil_estabelecimento)
+        setContentView(R.layout.activity_agenda)
 
-//       Funcao voltar
+//       Função para voltar
         val voltar = findViewById<TextView>(R.id.tv_back)
         voltar.setOnClickListener{
             val telaAnterior = Intent(applicationContext, MainActivity::class.java)
