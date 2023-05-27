@@ -8,5 +8,5 @@ import retrofit2.http.Path
 interface ServicoApi {
 
     @GET("servicos/categoria/{idCategoria}")
-    fun getServicoPorCategoria (@Path("idCategoria") idCategoria : Long) : Call<ServicoResponse>
+    fun getServicoPorCategoria (@Path("idCategoria") idCategoria : Long) : Call<List<ServicoResponse>>
 }
