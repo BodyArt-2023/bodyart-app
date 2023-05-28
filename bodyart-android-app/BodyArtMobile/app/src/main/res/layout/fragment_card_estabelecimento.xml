@@ -20,10 +20,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/et_img_service2"
+                android:id="@+id/tv_img_estabelecimento"
                 android:layout_width="300dp"
                 android:layout_height="150dp"
-                android:background="@color/african_violet" />
+                android:adjustViewBounds="true"
+                android:background="@mipmap/fotoestabelecimentodefault" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,19 +32,21 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/et_description_service2"
-                    android:layout_width="150dp"
+                    android:id="@+id/tv_nome"
+                    android:layout_width="120dp"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:text="@string/et_description"
+                    android:text="@string/tv_nome"
                     android:textColor="@color/white_smoke"
-                    android:textSize="16sp" />
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
 
                 <Button
                     android:id="@+id/btn_open_service2"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
+                    android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/lapis_lazuli"
                     android:text="@string/btn_open"
                     android:textSize="16sp"
@@ -57,19 +60,19 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/et_classification_service2"
+                    android:id="@+id/tv_nota"
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="15dp"
-                    android:text="@string/et_nota"
+                    android:text="@string/tv_nota"
                     android:textColor="@color/white_smoke"
-                    android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center"/>
 
                 <ImageView
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="30dp"
                     android:src="@mipmap/star" />
 

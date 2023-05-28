@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.sptech.bodyartmobile.retrofit.Apis
-import com.sptech.bodyartmobile.retrofit.model.response.CategoriaResponse
+import com.sptech.bodyartmobile.retrofit.model.response.EstabelecimentoResponse
 import com.sptech.bodyartmobile.retrofit.model.response.ServicoResponse
 import retrofit2.Call
 import retrofit2.Callback
@@ -27,9 +27,10 @@ private const val ID = "id"
 class FragmentCardCategoria : Fragment() {
     // TODO: Rename and change types of parameters
     private var nome: String? = null
-    private var id: Long? = null
+    private var id: Long = 0L
 
-    val servicoApi = Apis.getServicoApi()
+    val estabelecimentoApi = Apis.getEstabelecimentoApi()
+    val profissionalApi = Apis.getProfissionalApi()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +39,6 @@ class FragmentCardCategoria : Fragment() {
             id = it.getLong(ID)
 
         }
-
     }
 
     override fun onCreateView(
@@ -53,42 +53,51 @@ class FragmentCardCategoria : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<TextView>(R.id.tv_categoria)?.setText(nome)
+        mostrarEstabelecimentos()
+
     }
 
     fun mostrarEstabelecimentos() {
 
-        if (id != null) {
-            val getTodosServicos = servicoApi.getServicoPorCategoria(id!!)
+            var getTodosEstabelecimentos = estabelecimentoApi.getAllByCategoria(id)
 
-            getTodosServicos.enqueue(object : Callback<List<ServicoResponse>> {
+            if (getTodosEstabelecimentos != null) {
+                getTodosEstabelecimentos.enqueue(object : Callback<List<EstabelecimentoResponse>> {
 
-                // quando houver comunicação com a API
-                override fun onResponse(call: Call<List<ServicoResponse>>, response: Response<List<ServicoResponse>>) {
-                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
-                        val servicos = response.body()
+                    // quando houver comunicação com a API
+                    override fun onResponse(call: Call<List<EstabelecimentoResponse>>, response: Response<List<EstabelecimentoResponse>>) {
+                        if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
+                            val estabelecimentos = response.body()
 
-                        if (servicos != null) {
-                            for (estabelecimento in servicos) {
-                                var fragmentEstabelecimento = FragmentCardEstabelecimento()
-                                var tr = childFragmentManager.beginTransaction()
-                                var args = Bundle()
-                                args.putString("nome", estabelecimento.nome)
-                                args.putLong("id", estabelecimento.id)
-                                fragmentEstabelecimento.arguments = args
-                                tr.add(R.id.ll_fragment_card_categoria, fragmentEstabelecimento)
-                                tr.commitAllowingStateLoss()
+                            if (estabelecimentos != null) {
+                                for (estabelecimento in estabelecimentos) {
+
+                                    var fragmentEstabelecimento = FragmentCardEstabelecimento()
+                                    var tr = childFragmentManager.beginTransaction()
+                                    var args = Bundle()
+                                    args.putString("nome", estabelecimento.nome)
+                                    args.putLong("id", estabelecimento.id)
+                                    if (estabelecimento.foto?.link === null) {
+                                        //manter foto default
+                                    } else {
+                                        args.putString("foto", estabelecimento.foto.link)
+                                    }
+                                    //args.putDouble("avaliacao", )
+                                    fragmentEstabelecimento.arguments = args
+                                    tr.add(R.id.ll_categories, fragmentEstabelecimento)
+                                    tr.commitAllowingStateLoss()
+                                }
                             }
                         }
                     }
-                }
 
-                // quando não houver comunicação com a API
-                override fun onFailure(call: Call<List<ServicoResponse>>, t: Throwable) {
-                    Toast.makeText(context, "Erro na API: ${t.message}", Toast.LENGTH_SHORT).show()
-                    t.printStackTrace()
-                }
-            })
-        }
+                    // quando não houver comunicação com a API
+                    override fun onFailure(call: Call<List<EstabelecimentoResponse>>, t: Throwable) {
+                        Toast.makeText(context, "Erro na API: ${t.message}", Toast.LENGTH_SHORT).show()
+                        t.printStackTrace()
+                    }
+                })
+            }
     }
 
     companion object {
