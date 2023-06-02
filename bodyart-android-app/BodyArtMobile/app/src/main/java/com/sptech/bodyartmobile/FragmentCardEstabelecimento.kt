@@ -14,6 +14,7 @@ import android.widget.TextView
     private const val NAME = "nome"
 private const val ID = "id"
 private const val FOTO = "foto"
+private const val AVALIACAO = "avaliacao"
 
 /**
  * A simple [Fragment] subclass.
@@ -25,6 +26,7 @@ class FragmentCardEstabelecimento : Fragment() {
     private var nome: String? = null
     private var id: Long? = null
     private var foto: String? = null
+    private var avaliacao: Double? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,7 @@ class FragmentCardEstabelecimento : Fragment() {
             nome = it.getString(NAME)
             id = it.getLong(ID)
             foto = it.getString(FOTO)
+            avaliacao = it.getDouble(AVALIACAO)
         }
     }
 
@@ -46,6 +49,7 @@ class FragmentCardEstabelecimento : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<TextView>(R.id.tv_nome)?.setText(nome)
+        view.findViewById<TextView>(R.id.tv_nota).setText(avaliacao.toString())
         view.findViewById<TextView>(R.id.tv_img_estabelecimento).setText(foto)
 
     }
@@ -61,12 +65,13 @@ class FragmentCardEstabelecimento : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(nome: String, id:Long, foto: String) =
+        fun newInstance(nome: String, id:Long, foto: String, avaliacao: Double) =
             FragmentCardEstabelecimento().apply {
                 arguments = Bundle().apply {
                     putString(NAME, nome)
                     putLong(ID, id)
                     putString(FOTO, foto)
+                    putDouble(AVALIACAO, avaliacao)
                 }
             }
     }

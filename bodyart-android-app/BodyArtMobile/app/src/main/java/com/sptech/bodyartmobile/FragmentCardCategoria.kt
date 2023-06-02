@@ -59,45 +59,80 @@ class FragmentCardCategoria : Fragment() {
 
     fun mostrarEstabelecimentos() {
 
-            var getTodosEstabelecimentos = estabelecimentoApi.getAllByCategoria(id)
+        var getTodosEstabelecimentos = estabelecimentoApi.getAllByCategoria(id)
 
-            if (getTodosEstabelecimentos != null) {
-                getTodosEstabelecimentos.enqueue(object : Callback<List<EstabelecimentoResponse>> {
+        if (getTodosEstabelecimentos != null) {
+            getTodosEstabelecimentos.enqueue(object : Callback<List<EstabelecimentoResponse>> {
 
-                    // quando houver comunicação com a API
-                    override fun onResponse(call: Call<List<EstabelecimentoResponse>>, response: Response<List<EstabelecimentoResponse>>) {
-                        if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
-                            val estabelecimentos = response.body()
+                // quando houver comunicação com a API
+                override fun onResponse(
+                    call: Call<List<EstabelecimentoResponse>>,
+                    response: Response<List<EstabelecimentoResponse>>
+                ) {
+                    if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
+                        val estabelecimentos = response.body()
 
-                            if (estabelecimentos != null) {
-                                for (estabelecimento in estabelecimentos) {
+                        if (estabelecimentos != null) {
+                            for (estabelecimento in estabelecimentos) {
 
-                                    var fragmentEstabelecimento = FragmentCardEstabelecimento()
-                                    var tr = childFragmentManager.beginTransaction()
-                                    var args = Bundle()
-                                    args.putString("nome", estabelecimento.nome)
-                                    args.putLong("id", estabelecimento.id)
-                                    if (estabelecimento.foto?.link === null) {
-                                        //manter foto default
-                                    } else {
-                                        args.putString("foto", estabelecimento.foto.link)
+                                var getAvaliacao =
+                                    estabelecimentoApi.getAvaliacaoByEstabelecimento(id)
+                                var avaliacao: Double
+                                getAvaliacao.enqueue(object : Callback<Double> {
+                                    override fun onResponse(
+                                        call: Call<Double>,
+                                        response: Response<Double>
+                                    ) {
+                                        avaliacao = response.body()!!;
+
+                                        var fragmentEstabelecimento = FragmentCardEstabelecimento()
+                                        var tr = childFragmentManager.beginTransaction()
+                                        var args = Bundle()
+                                        args.putString("nome", estabelecimento.nome)
+                                        args.putLong("id", estabelecimento.id)
+                                        if (estabelecimento.foto?.link === null) {
+                                            //manter foto default
+                                        } else {
+                                            args.putString("foto", estabelecimento.foto.link)
+                                        }
+                                        args.putDouble("avaliacao", avaliacao)
+                                        fragmentEstabelecimento.arguments = args
+                                        tr.add(R.id.ll_categories, fragmentEstabelecimento)
+                                        tr.commitAllowingStateLoss()
+
                                     }
-                                    //args.putDouble("avaliacao", )
-                                    fragmentEstabelecimento.arguments = args
-                                    tr.add(R.id.ll_categories, fragmentEstabelecimento)
-                                    tr.commitAllowingStateLoss()
-                                }
+
+                                    override fun onFailure(call: Call<Double>, t: Throwable) {
+
+                                        var fragmentEstabelecimento = FragmentCardEstabelecimento()
+                                        var tr = childFragmentManager.beginTransaction()
+                                        var args = Bundle()
+                                        args.putString("nome", estabelecimento.nome)
+                                        args.putLong("id", estabelecimento.id)
+                                        if (estabelecimento.foto?.link === null) {
+                                            //manter foto default
+                                        } else {
+                                            args.putString("foto", estabelecimento.foto.link)
+                                        }
+                                        args.putDouble("avaliacao", 0.0)
+                                        fragmentEstabelecimento.arguments = args
+                                        tr.add(R.id.ll_categories, fragmentEstabelecimento)
+                                        tr.commitAllowingStateLoss()
+                                    }
+                                })
+
                             }
                         }
                     }
+                }
 
-                    // quando não houver comunicação com a API
-                    override fun onFailure(call: Call<List<EstabelecimentoResponse>>, t: Throwable) {
-                        Toast.makeText(context, "Erro na API: ${t.message}", Toast.LENGTH_SHORT).show()
-                        t.printStackTrace()
-                    }
-                })
-            }
+                // quando não houver comunicação com a API
+                override fun onFailure(call: Call<List<EstabelecimentoResponse>>, t: Throwable) {
+                    Toast.makeText(context, "Erro na API: ${t.message}", Toast.LENGTH_SHORT).show()
+                    t.printStackTrace()
+                }
+            })
+        }
     }
 
     companion object {
@@ -119,3 +154,4 @@ class FragmentCardCategoria : Fragment() {
             }
     }
 }
+

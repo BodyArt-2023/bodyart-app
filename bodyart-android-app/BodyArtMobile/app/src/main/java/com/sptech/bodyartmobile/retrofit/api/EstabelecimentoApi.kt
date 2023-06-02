@@ -12,4 +12,7 @@ interface EstabelecimentoApi {
 
     @GET("estabelecimentos/categoria/{idCategoria}")
     fun getAllByCategoria(@Path ("idCategoria") idCategoria : Long): Call<List<EstabelecimentoResponse>>
+
+    @GET("estabelecimentos/avaliacao/{idEstabelecimento}")
+    fun getAvaliacaoByEstabelecimento(@Path ("idEstabelecimento") idEstabelecimento : Long): Call<Double>
 }
