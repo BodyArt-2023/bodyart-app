@@ -60,6 +60,9 @@
     <string name="btn_see_more">Saiba mais</string>
     <string name="meus_agendamentos">Meus agendamentos</string>
     <string name="tv_nota">5.0</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tv_agenda">Minha agenda</string>
+    <string name="tv_feed">Feed</string>
+    <string name="tv_inicio">Ínicio</string>
+    <string name="tv_perfil">Perfil</string>
+    <string name="tv_bemvindo">Bem vindo usuário</string>
 </resources>
