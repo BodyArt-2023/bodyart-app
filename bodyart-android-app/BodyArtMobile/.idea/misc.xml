@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -14,16 +15,22 @@
         <entry key="..\:/Users/lhamaishi/Documents/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_redefinir_senha.xml" value="0.176" />
         <entry key="..\:/Users/lhamaishi/Documents/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.253" />
         <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_cadastro.xml" value="0.15760869565217392" />
-        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_home_page.xml" value="0.18155619596541786" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_card_categoria.xml" value="0.1" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_home_page.xml" value="0.25" />
         <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_perfil_estabelecimento.xml" value="0.1" />
         <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_redefinir_senha.xml" value="0.134375" />
         <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_servicos.xml" value="0.22" />
-        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_todos_servicos.xml" value="0.2" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_todos_servicos.xml" value="0.1" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_categoria.xml" value="0.1859375" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_categorias.xml" value="0.2" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_estabelecimento.xml" value="0.25" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_ver_todos.xml" value="0.1859375" />
         <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_servicos.xml" value="0.2" />
+        <entry key="..\:/Users/silva/Documents/BodyArt/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/ll_categorie.xml" value="0.19895833333333332" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
