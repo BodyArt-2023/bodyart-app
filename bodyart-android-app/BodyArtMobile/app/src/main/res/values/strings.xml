@@ -60,4 +60,9 @@
     <string name="btn_see_more">Saiba mais</string>
     <string name="meus_agendamentos">Meus agendamentos</string>
     <string name="et_nota">0.0</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_confirmar_senha">Confirmar Senha</string>
+    <string name="nova_senha">Digite sua nova senha</string>
+    <string name="confirmar_nova_senha">Digite novamente</string>
 </resources>

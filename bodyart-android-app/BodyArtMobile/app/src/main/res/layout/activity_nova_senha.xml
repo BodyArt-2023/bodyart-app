@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NovaSenha">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_primary"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_redef_senha"
+            android:textSize="30sp"
+            android:text="@string/redef_senha"
+            android:layout_below="@+id/tv_back"
+            android:textColor="@color/white_smoke"
+            android:layout_alignStart="@+id/et_senha"
+            android:textStyle="bold"
+            android:layout_marginTop="60dp"/>
+
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:id="@+id/et_senha"
+            android:hint="@string/nova_senha"
+            android:background="@color/white_smoke"
+            android:layout_below="@+id/tv_redef_senha"
+            android:paddingHorizontal="6dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+        <EditText
+            android:layout_width="350dp"
+            android:layout_height="40dp"
+            android:id="@+id/et_confirmar_senha"
+            android:hint="@string/confirmar_nova_senha"
+            android:background="@color/white_smoke"
+            android:layout_below="@+id/et_senha"
+            android:paddingHorizontal="6dp"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true"/>
+
+        <Button
+            android:id="@+id/btn_continuar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/et_confirmar_senha"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:backgroundTint="@color/lapis_lazuli"
+            android:text="@string/txt_confirmar_senha"
+            android:textSize="15sp"
+
+            />
+
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
