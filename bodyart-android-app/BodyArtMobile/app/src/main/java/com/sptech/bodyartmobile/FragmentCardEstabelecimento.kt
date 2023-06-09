@@ -1,17 +1,19 @@
 package com.sptech.bodyartmobile
 
-import android.graphics.drawable.Drawable
+import android.annotation.SuppressLint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.fragment.app.Fragment
+import com.squareup.picasso.Picasso
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private const val NAME = "nome"
+private const val NAME = "nome"
 private const val ID = "id"
 private const val FOTO = "foto"
 private const val AVALIACAO = "avaliacao"
@@ -46,13 +48,18 @@ class FragmentCardEstabelecimento : Fragment() {
         return inflater.inflate(R.layout.fragment_card_estabelecimento, container, false)
     }
 
+    @SuppressLint("ResourceType")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<TextView>(R.id.tv_nome)?.setText(nome)
         view.findViewById<TextView>(R.id.tv_nota).setText(avaliacao.toString())
-        view.findViewById<TextView>(R.id.tv_img_estabelecimento).setText(foto)
+        if (foto != null) {
+            Picasso.get().load("http://10.0.2.2:8080/images/$foto").
+                into(view.findViewById<ImageView>(R.id.iv_img_estabelecimento))
+        }
 
     }
+
 
     companion object {
         /**
@@ -65,7 +72,7 @@ class FragmentCardEstabelecimento : Fragment() {
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(nome: String, id:Long, foto: String, avaliacao: Double) =
+        fun newInstance(nome: String, id: Long, foto: String, avaliacao: Double) =
             FragmentCardEstabelecimento().apply {
                 arguments = Bundle().apply {
                     putString(NAME, nome)

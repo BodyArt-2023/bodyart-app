@@ -1,5 +1,7 @@
 package com.sptech.bodyartmobile
 
+import android.content.Context
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.sptech.bodyartmobile.retrofit.Apis
 import com.sptech.bodyartmobile.retrofit.model.response.EstabelecimentoResponse
 import com.sptech.bodyartmobile.retrofit.model.response.ServicoResponse
@@ -90,7 +93,7 @@ class FragmentCardCategoria : Fragment() {
                                         var args = Bundle()
                                         args.putString("nome", estabelecimento.nome)
                                         args.putLong("id", estabelecimento.id)
-                                        if (estabelecimento.foto?.link === null) {
+                                        if (estabelecimento.foto == null) {
                                             //manter foto default
                                         } else {
                                             args.putString("foto", estabelecimento.foto.link)
@@ -109,7 +112,7 @@ class FragmentCardCategoria : Fragment() {
                                         var args = Bundle()
                                         args.putString("nome", estabelecimento.nome)
                                         args.putLong("id", estabelecimento.id)
-                                        if (estabelecimento.foto?.link === null) {
+                                        if (estabelecimento.foto == null) {
                                             //manter foto default
                                         } else {
                                             args.putString("foto", estabelecimento.foto.link)
