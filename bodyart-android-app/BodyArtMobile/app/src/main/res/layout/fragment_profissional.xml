@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FragmentProfissional">
 
-    <!-- TODO: Update blank fragment layout -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black_primary">
+
         <ImageView
             android:id="@+id/background"
             android:layout_width="match_parent"
@@ -18,41 +19,28 @@
             android:src="@mipmap/tattooer" />
 
 
-        <TextView
-            android:id="@+id/tv_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="90dp"
-            android:padding="2dp"
-            android:text="@string/back"
-            android:textColor="@color/african_violet"
-            android:textStyle="bold"
-            android:background="@color/gray_light"
-            android:textSize="25sp" />
-
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/profile_img"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_below="@+id/background"
-            android:layout_marginTop="-50dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="-50dp"
             android:background="@drawable/round_image"
             android:scaleType="fitXY"
             android:src="@mipmap/homitatoo"
             app:shapeAppearanceOverlay="@style/circleimage" />
 
         <TextView
+            android:id="@+id/nome_profissional"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/nome_profissional"
-            android:text="@string/nome_profissional"
-            android:textColor="@color/white_smoke"
-            android:textSize="20sp"
             android:layout_below="@+id/background"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/nome_profissional"
+            android:textColor="@color/white_smoke"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 
