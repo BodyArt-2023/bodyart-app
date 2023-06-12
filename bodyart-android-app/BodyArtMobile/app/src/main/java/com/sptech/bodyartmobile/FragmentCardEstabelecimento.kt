@@ -1,10 +1,12 @@
 package com.sptech.bodyartmobile
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
@@ -54,10 +56,23 @@ class FragmentCardEstabelecimento : Fragment() {
         view.findViewById<TextView>(R.id.tv_nome)?.setText(nome)
         view.findViewById<TextView>(R.id.tv_nota).setText(avaliacao.toString())
         if (foto != null) {
-            Picasso.get().load("http://10.0.2.2:8080/images/$foto").
-                into(view.findViewById<ImageView>(R.id.iv_img_estabelecimento))
+            Picasso.get().load("http://10.0.2.2:8080/images/$foto")
+                .into(view.findViewById<ImageView>(R.id.iv_img_estabelecimento))
+        }
+        view.findViewById<Button>(R.id.btn_open_service2).setOnClickListener {
+            abrirTelaEstabelecimento()
         }
 
+    }
+
+
+    fun abrirTelaEstabelecimento() {
+        val telaEstabelecimento = Intent(context, PerfilEstabelecimento::class.java)
+        telaEstabelecimento.putExtra("id", id)
+        telaEstabelecimento.putExtra("nome", nome)
+        telaEstabelecimento.putExtra("foto", foto)
+        telaEstabelecimento.putExtra("avaliacao", avaliacao)
+        startActivity(telaEstabelecimento)
     }
 
 
