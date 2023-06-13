@@ -114,7 +114,7 @@
                             android:layout_marginLeft="20dp"
                             android:background="@drawable/round_image"
                             android:scaleType="fitXY"
-                            android:src="@mipmap/homitatoo"
+                            android:src="@mipmap/user_photo"
                             app:shapeAppearanceOverlay="@style/circleimage" />
 
                         <TextView
@@ -125,7 +125,7 @@
                             android:layout_alignStart="@id/img_perfil_cli"
                             android:layout_marginTop="20dp"
                             android:gravity="end"
-                            android:text="Nome do Cliente"
+                            android:text="João Silva"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -138,7 +138,7 @@
                             android:layout_marginRight="30dp"
                             android:isIndicator="true"
                             android:numStars="5"
-                            android:rating="4"
+                            android:rating="5"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:stepSize="0.5" />
@@ -169,7 +169,7 @@
                             android:layout_marginLeft="20dp"
                             android:background="@drawable/round_image"
                             android:scaleType="fitXY"
-                            android:src="@mipmap/homitatoo"
+                            android:src="@mipmap/user_photo"
                             app:shapeAppearanceOverlay="@style/circleimage" />
 
                         <TextView
@@ -180,7 +180,7 @@
                             android:layout_alignStart="@id/img_perfil_cliw"
                             android:layout_marginTop="20dp"
                             android:gravity="end"
-                            android:text="Nome do Cliente"
+                            android:text="Afonso"
                             android:textSize="30sp"
                             android:textStyle="bold" />
 
@@ -193,7 +193,7 @@
                             android:layout_marginRight="30dp"
                             android:isIndicator="true"
                             android:numStars="5"
-                            android:rating="4"
+                            android:rating="5"
                             android:scaleX="0.7"
                             android:scaleY="0.7"
                             android:stepSize="0.5" />
