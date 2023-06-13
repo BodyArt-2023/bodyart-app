@@ -47,9 +47,9 @@
             android:layout_centerVertical="true">
 
             <LinearLayout
+                android:id="@+id/ll_fragment_card_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/ll_fragment_card_categoria"
                 android:orientation="vertical">
 
             </LinearLayout>

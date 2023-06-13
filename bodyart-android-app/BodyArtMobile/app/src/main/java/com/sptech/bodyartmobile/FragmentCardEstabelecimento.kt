@@ -65,7 +65,6 @@ class FragmentCardEstabelecimento : Fragment() {
 
     }
 
-
     fun abrirTelaEstabelecimento() {
         val telaEstabelecimento = Intent(context, PerfilEstabelecimento::class.java)
         telaEstabelecimento.putExtra("id", id)
@@ -74,7 +73,6 @@ class FragmentCardEstabelecimento : Fragment() {
         telaEstabelecimento.putExtra("avaliacao", avaliacao)
         startActivity(telaEstabelecimento)
     }
-
 
     companion object {
         /**

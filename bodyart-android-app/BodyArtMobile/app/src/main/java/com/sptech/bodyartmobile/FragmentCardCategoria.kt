@@ -40,7 +40,6 @@ class FragmentCardCategoria : Fragment() {
         arguments?.let {
             nome = it.getString(NAME)
             id = it.getLong(ID)
-
         }
     }
 

@@ -14,19 +14,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints">
 
-        <fragment
-            android:id="@+id/fragment_header"
-            android:name="com.sptech.bodyartmobile.FragmentProfissional"
+        <LinearLayout
+            android:id="@+id/ll_fragment_perfil_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_profissional" />
-
+            android:orientation="vertical"></LinearLayout>
 
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_header">
+            android:layout_below="@id/ll_fragment_perfil_header">
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -39,23 +37,24 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="50dp"
                     android:backgroundTint="@color/lapis_lazuli"
+                    android:onClick="botaoAgendar"
                     android:text="@string/agendar" />
 
 
-              <fragment
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:name="com.sptech.bodyartmobile.FragmentFotos"
-                  android:id="@+id/fragment_fotos"
-                  tools:layout="@layout/fragment_fotos"
-                  android:layout_below="@id/btn_agendar"/>
+                <!--                <fragment-->
+                <!--                    android:id="@+id/fragment_fotos"-->
+                <!--                    android:name="com.sptech.bodyartmobile.FragmentFotos"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_below="@id/btn_agendar"-->
+                <!--                    tools:layout="@layout/fragment_fotos" />-->
 
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cv_avaliacao1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/fragment_fotos"
+                    android:layout_below="@id/btn_agendar"
                     android:layout_marginTop="20dp"
                     android:backgroundTint="@color/white_smoke"
                     app:cardCornerRadius="8dp"

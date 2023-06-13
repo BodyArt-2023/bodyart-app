@@ -4,7 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Alexandre Gavazzi/AndroidStudioProjects/BodyArtMobile/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_agenda.xml" value="0.22" />
         <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_agenda_estabelecimento.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_agendar.xml" value="0.22" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_cadastro.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_home_page.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_marcando_dia_horario_agendar.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_nova_senha.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_perfil_estabelecimento.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_redefinir_senha.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/activity_servicos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_categoria.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_estabelecimento.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_card_servico_agendar.xml" value="0.5" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_fotos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Alexandre Gavazzi/Desktop/BODY-ART-AGORA-E-VERDADE/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/layout/fragment_profissional.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/lhamaishi/Documents/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.253" />
         <entry key="..\:/Users/lhamaishi/Documents/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/drawable/ic_launcher_background.xml" value="0.253" />
         <entry key="..\:/Users/lhamaishi/Documents/bodyart-app/bodyart-android-app/BodyArtMobile/app/src/main/res/drawable/image_component.xml" value="0.1685" />

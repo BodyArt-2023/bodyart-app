@@ -38,7 +38,7 @@ class FragmentProfissional : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_fotos, container, false)
+        return inflater.inflate(R.layout.fragment_profissional, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -46,8 +46,9 @@ class FragmentProfissional : Fragment() {
         view.findViewById<TextView>(R.id.nome_profissional).text = nome
         view.findViewById<TextView>(R.id.tv_nota).text = avaliacao.toString()
 //        if (foto != null) {
-            Picasso.get().load("https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/08/red-fox-looks-camera-portrait.jpg?fit=1000%2C668&ssl=1")
-                .into(view.findViewById<ShapeableImageView>(R.id.profile_img))
+        Picasso.get()
+            .load("https://i0.wp.com/www.portaldodog.com.br/cachorros/wp-content/uploads/2021/08/red-fox-looks-camera-portrait.jpg?fit=1000%2C668&ssl=1")
+            .into(view.findViewById<ShapeableImageView>(R.id.profile_img))
 //        }
     }
 

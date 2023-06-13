@@ -3,6 +3,8 @@ package com.sptech.bodyartmobile
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.TextView
 
 class PerfilEstabelecimento : AppCompatActivity() {
@@ -21,18 +23,32 @@ class PerfilEstabelecimento : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_estabelecimento)
-
-//       Funcao voltar
-        val voltar = findViewById<TextView>(R.id.tv_back)
-        voltar.setOnClickListener {
-            val telaAnterior = Intent(applicationContext, MainActivity::class.java)
-            startActivity(telaAnterior)
-        }
-
-        // Atribuindo variaveis
-        val textNome = findViewById<TextView>(R.id.nome_profissional)
-        textNome.setText(nome)
+        mostrarHeader()
     }
 
+    fun mostrarHeader() {
+        println("entrou na mostrarHeader")
+
+        var tr = supportFragmentManager.beginTransaction()
+        findViewById<LinearLayout>(R.id.ll_fragment_perfil_header).removeAllViews()
+        var fragment = FragmentProfissional()
+
+        var args = Bundle()
+        args.putString("nome", nome)
+        id?.let { args.putLong("id", it) }
+        args.putString("foto", foto)
+        avaliacao?.let { args.putDouble("avaliacao", it) }
+
+        fragment.arguments = args
+
+        tr.add(R.id.ll_fragment_perfil_header, fragment)
+        tr.commitAllowingStateLoss()
+    }
+
+    fun botaoAgendar(view: View) {
+        val telaServicosProfissional = Intent(applicationContext, Agendar::class.java)
+        telaServicosProfissional.putExtra("id", id)
+        startActivity(telaServicosProfissional)
+    }
 
 }
