@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentFotos">
+
+
+    <LinearLayout
+        android:id="@+id/ll_fotos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <GridLayout
+                android:id="@+id/grid_portifolio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:columnCount="2"
+                android:rowCount="2">
+                <!-- Adicione os elementos de layout dentro do GridLayout -->
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/tattoo1"
+                    app:shapeAppearanceOverlay="@style/roundedimage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/tattoo2"
+                    app:shapeAppearanceOverlay="@style/roundedimage" />
+
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/tattoo3"
+                    app:shapeAppearanceOverlay="@style/roundedimage" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/tattoo4"
+                    app:shapeAppearanceOverlay="@style/roundedimage" />
+
+
+                <!-- Adicione mais elementos de layout aqui -->
+
+            </GridLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</FrameLayout>
