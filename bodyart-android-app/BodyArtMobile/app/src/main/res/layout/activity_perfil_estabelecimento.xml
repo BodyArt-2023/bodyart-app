@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,186 +15,197 @@
         tools:ignore="MissingConstraints">
 
         <fragment
+            android:id="@+id/fragment_header"
+            android:name="com.sptech.bodyartmobile.FragmentProfissional"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_profissional"
-            android:name="com.sptech.bodyartmobile.FragmentProfissional"
-            android:id="@+id/fragment_header"/>
+            tools:layout="@layout/fragment_profissional" />
 
 
 
-        <Button
-            android:id="@+id/btn_agendar"
-            android:layout_width="300dp"
+        <ScrollView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fragment_header"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:backgroundTint="@color/lapis_lazuli"
-            android:text="@string/agendar" />
-
-
-        <GridLayout
-            android:id="@+id/grid_portifolio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/btn_agendar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:columnCount="2"
-            android:rowCount="2">
-
-            <!-- Adicione os elementos de layout dentro do GridLayout -->
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/tattoo1"
-                app:shapeAppearanceOverlay="@style/roundedimage" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/tattoo2"
-                app:shapeAppearanceOverlay="@style/roundedimage" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/tattoo3"
-                app:shapeAppearanceOverlay="@style/roundedimage" />
-
-            <com.google.android.material.imageview.ShapeableImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="5dp"
-                android:scaleType="fitXY"
-                android:src="@mipmap/tattoo4"
-                app:shapeAppearanceOverlay="@style/roundedimage" />
-
-
-            <!-- Adicione mais elementos de layout aqui -->
-
-        </GridLayout>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_avaliacao1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/grid_portifolio"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/white_smoke"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
+            android:layout_below="@id/fragment_header">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
+                android:layout_height="wrap_content">
 
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/img_perfil_cli"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/round_image"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/homitatoo"
-                    app:shapeAppearanceOverlay="@style/circleimage" />
+                <Button
+                    android:id="@+id/btn_agendar"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="50dp"
+                    android:backgroundTint="@color/lapis_lazuli"
+                    android:text="@string/agendar" />
 
-                <TextView
-                    android:id="@+id/nameTextView"
+
+                <GridLayout
+                    android:id="@+id/grid_portifolio"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/img_perfil_cli"
-                    android:layout_alignStart="@id/img_perfil_cli"
+                    android:layout_below="@id/btn_agendar"
+                    android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
-                    android:gravity="end"
-                    android:text="Nome do Cliente"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
+                    android:columnCount="2"
+                    android:rowCount="2">
 
-                <RatingBar
-                    android:id="@+id/ratingBar"
+                    <!-- Adicione os elementos de layout dentro do GridLayout -->
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/tattoo1"
+                        app:shapeAppearanceOverlay="@style/roundedimage" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/tattoo2"
+                        app:shapeAppearanceOverlay="@style/roundedimage" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/tattoo3"
+                        app:shapeAppearanceOverlay="@style/roundedimage" />
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_margin="5dp"
+                        android:scaleType="fitXY"
+                        android:src="@mipmap/tattoo4"
+                        app:shapeAppearanceOverlay="@style/roundedimage" />
+
+
+                    <!-- Adicione mais elementos de layout aqui -->
+
+                </GridLayout>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_avaliacao1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
+                    android:layout_below="@id/grid_portifolio"
                     android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:isIndicator="true"
-                    android:numStars="5"
-                    android:rating="4"
-                    android:scaleX="0.7"
-                    android:scaleY="0.7"
-                    android:stepSize="0.5" />
+                    android:backgroundTint="@color/white_smoke"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
 
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_perfil_cli"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/round_image"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/homitatoo"
+                            app:shapeAppearanceOverlay="@style/circleimage" />
+
+                        <TextView
+                            android:id="@+id/nameTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_perfil_cli"
+                            android:layout_alignStart="@id/img_perfil_cli"
+                            android:layout_marginTop="20dp"
+                            android:gravity="end"
+                            android:text="Nome do Cliente"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="30dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="4"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:stepSize="0.5" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cv_avaliacao1"
+                    android:layout_marginTop="20dp"
+                    android:backgroundTint="@color/white_smoke"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="4dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp">
+
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/img_perfil_cliw"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginLeft="20dp"
+                            android:background="@drawable/round_image"
+                            android:scaleType="fitXY"
+                            android:src="@mipmap/homitatoo"
+                            app:shapeAppearanceOverlay="@style/circleimage" />
+
+                        <TextView
+                            android:id="@+id/nameTextVieww"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/img_perfil_cliw"
+                            android:layout_alignStart="@id/img_perfil_cliw"
+                            android:layout_marginTop="20dp"
+                            android:gravity="end"
+                            android:text="Nome do Cliente"
+                            android:textSize="30sp"
+                            android:textStyle="bold" />
+
+                        <RatingBar
+                            android:id="@+id/ratingBar2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginRight="30dp"
+                            android:isIndicator="true"
+                            android:numStars="5"
+                            android:rating="4"
+                            android:scaleX="0.7"
+                            android:scaleY="0.7"
+                            android:stepSize="0.5" />
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
             </RelativeLayout>
+        </ScrollView>
 
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/cv_avaliacao1"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/white_smoke"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4dp"
-            app:cardUseCompatPadding="true">
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="16dp">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/img_perfil_cliw"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/round_image"
-                    android:scaleType="fitXY"
-                    android:src="@mipmap/homitatoo"
-                    app:shapeAppearanceOverlay="@style/circleimage" />
-
-                <TextView
-                    android:id="@+id/nameTextVieww"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/img_perfil_cliw"
-                    android:layout_alignStart="@id/img_perfil_cliw"
-                    android:layout_marginTop="20dp"
-                    android:gravity="end"
-                    android:text="Nome do Cliente"
-                    android:textSize="30sp"
-                    android:textStyle="bold" />
-
-                <RatingBar
-                    android:id="@+id/ratingBar2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginTop="20dp"
-                    android:layout_marginRight="30dp"
-                    android:isIndicator="true"
-                    android:numStars="5"
-                    android:rating="4"
-                    android:scaleX="0.7"
-                    android:scaleY="0.7"
-                    android:stepSize="0.5" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
