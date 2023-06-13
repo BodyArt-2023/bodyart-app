@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.children
 import com.sptech.bodyartmobile.retrofit.Apis
 import com.sptech.bodyartmobile.retrofit.model.response.CategoriaResponse
 import retrofit2.Call
@@ -62,15 +63,16 @@ class Servicos : AppCompatActivity() {
 
     fun mostrarCategorias(categorias : List<CategoriaResponse>) {
 
+        var tr = supportFragmentManager.beginTransaction()
+        findViewById<LinearLayout>(R.id.ll_fragment_card_categoria).removeAllViews()
         for (categoria in categorias) {
             var fragmentCategoria = FragmentCardCategoria()
-            var tr = supportFragmentManager.beginTransaction()
             var args = Bundle()
             args.putString("nome", categoria.nome)
             args.putLong("id", categoria.id)
             fragmentCategoria.arguments = args
             tr.add(R.id.ll_fragment_card_categoria, fragmentCategoria)
-            tr.commitAllowingStateLoss()
         }
+        tr.commitAllowingStateLoss()
     }
 }
