@@ -15,6 +15,6 @@ interface UsuarioApi {
 
     @Headers("Content-Type: application/json")
     @PUT("/usuarios/cliente/{id}")
-    fun atualiza(@Body usuarioRequest: UsuarioRequest,@Path("id")email:String) : Call<UsuarioResponse>
+    fun atualiza(@Body usuarioRequest: UsuarioRequest,@Path("id")id:String) : Call<UsuarioResponse>
 
 }

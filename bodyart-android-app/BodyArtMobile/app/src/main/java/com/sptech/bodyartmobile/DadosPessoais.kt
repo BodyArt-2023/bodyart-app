@@ -64,7 +64,7 @@ class DadosPessoais : AppCompatActivity() {
             }
 
 
-            val usuarioRequest = UsuarioRequest(nome, email, senha, numero, genero, "2023-04-06")
+            val usuarioRequest = UsuarioRequest("lucas castione", "lucas.castione@gmail.com", "Wizwizfodao1@", "11980541496", 'M', "2023-04-06")
 
             val put = usuarioApi.atualiza(usuarioRequest, intent.getStringExtra("id").toString())
 

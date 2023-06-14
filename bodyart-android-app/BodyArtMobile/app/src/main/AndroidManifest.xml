@@ -17,6 +17,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ExibePublicacoes"
+            android:exported="false" />
+        <activity
+            android:name=".Publicacoes"
+            android:exported="false" />
+        <activity
             android:name=".DadosPessoais"
             android:exported="false" />
         <activity
