@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_primary"
+    tools:context=".PerguntasFrequentes">
+    <LinearLayout
+        android:id="@+id/ll_voltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="15dp"
+        android:onClick="voltar"
+
+        >
+        <ImageView
+            android:id="@+id/seta_esquerda"
+            android:layout_width="40dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_seta_esquerda"/>
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/back"
+            android:textColor="@color/african_violet"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Perguntas Frequentes"
+        android:textColor="@color/white_smoke"
+        android:textSize="25sp"
+        android:padding="15dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_voltar"
+        tools:ignore="MissingConstraints"/>
+
+    <LinearLayout
+        android:id="@+id/funciona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/black_medium"
+        app:layout_constraintTop_toBottomOf="@+id/titulo"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        android:layout_margin="15dp"
+        android:onClick="exibeTextoFunciona">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Como funciona o BodyArt?"
+                android:textSize="18dp"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textColor="@color/white_smoke"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_seta_baixo"
+                />
+
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_funciona"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white_smoke"
+            android:visibility="gone"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_principais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/black_medium"
+        app:layout_constraintTop_toBottomOf="@+id/funciona"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        android:layout_margin="15dp"
+        android:onClick="exibeTextoPrincipais">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Quais são os principais recursos do BodyArt?"
+            android:textSize="18dp"
+            android:textColor="@color/white_smoke"/>
+
+        <TextView
+            android:id="@+id/tv_principais"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white_smoke"
+            android:visibility="gone"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_para_mim"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/black_medium"
+        app:layout_constraintTop_toBottomOf="@+id/ll_principais"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="20dp"
+        android:onClick="exibeTextoParamim"
+        android:layout_margin="15dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="O BodyArt é pra mim?"
+            android:textSize="18dp"
+            android:textColor="@color/white_smoke"/>
+
+        <TextView
+            android:id="@+id/tv_para_mim"
+            android:paddingHorizontal="8dp"
+            android:paddingTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white_smoke"
+            android:visibility="gone"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

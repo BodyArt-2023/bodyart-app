@@ -104,7 +104,7 @@ class Cadastro2 : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<UsuarioResponse>, t: Throwable) {
-                    Toast.makeText(baseContext, getString(R.string.msg_cadastro_nao_realizado), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext, "erro ao se conectar com a api", Toast.LENGTH_SHORT).show()
                 }
 
             })
