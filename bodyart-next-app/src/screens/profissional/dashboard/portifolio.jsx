@@ -42,15 +42,15 @@ export default function Portifolio() {
           setContext={setGaleriaContext}
         /> */}
         <AddFoto
-          trigger={<Button>oi</Button>}
+          trigger={<Button>Add foto</Button>}
           context={galeriaContext}
           setContext={setGaleriaContext}
           portifolio
         />
         <CardPortifolio
           image="https://d3ugyf2ht6aenh.cloudfront.net/stores/001/599/573/products/d4491e8f-a7b7-463e-bee7-532695170f4a-6901121d9e241e164c16314356400377-640-0.png"
-          title="Bumbum"
-          description="O bumbum mais lindo do mundo é o do meu Amor"
+          title="Make da amiga"
+          description="A Make ficou linda demais amiga!"
           onDelete={() => alert("delete feito")}
         />
       </div>
