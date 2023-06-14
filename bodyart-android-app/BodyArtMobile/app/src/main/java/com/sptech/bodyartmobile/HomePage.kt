@@ -45,4 +45,9 @@ class HomePage : AppCompatActivity() {
         Toast.makeText(baseContext, getString(R.string.msg_boas_vindas, nome), Toast.LENGTH_SHORT).show()
 
     }
+
+    fun feed(view: View){
+        val telaPublicacoes = Intent(applicationContext, ExibePublicacoes::class.java)
+        startActivity(telaPublicacoes)
+    }
 }

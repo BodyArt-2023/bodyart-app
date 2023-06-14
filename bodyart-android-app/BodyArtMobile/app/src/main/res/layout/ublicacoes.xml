@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/black_medium">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:background="@color/black_primary"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_publicacao"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_nomePublicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teste"
+            app:layout_constraintStart_toEndOf="@id/iv_publicacao"
+            app:layout_constraintTop_toTopOf="@id/iv_publicacao"
+            app:layout_constraintBottom_toBottomOf="@id/iv_publicacao"
+            android:textSize="15sp"
+            android:textColor="@color/white_smoke"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_favoritos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/iv_publicacao"
+            app:layout_constraintBottom_toBottomOf="@id/iv_publicacao"
+            android:textSize="15sp"
+            android:textColor="@color/white_smoke"
+            android:layout_marginStart="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_textoPublicacao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tatoos de hj"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_publicacao"
+            android:textSize="15sp"
+            android:textColor="@color/white_smoke"
+            android:layout_marginStart="5dp"/>
+
+        <ImageView
+            android:id="@+id/iv_foto"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_textoPublicacao"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
