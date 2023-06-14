@@ -47,9 +47,9 @@ export default function Agendamentos() {
               const vh = agend.dataHoraCheckin;
               return (
                 <CardServico
-                  key={`${agend.id}-${agend.cliente.nome}`}
+                  key={`${agend.id}-${agend.servico}`}
                   title={"Serviço Agendado"}
-                  cliente={agend.cliente.nome}
+                  servico={agend.servico}
                   onClick={() => {
                     setAddServiceIsOpen(true);
                   }}

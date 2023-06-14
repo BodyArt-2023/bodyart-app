@@ -9,7 +9,7 @@ export default function CardServico({
   duration,
   description,
   children,
-  cliente,
+  servico,
   dataHora,
   finalizado,
   className,
@@ -36,7 +36,7 @@ export default function CardServico({
           {description ? (
             <LabelValue label={"Descrição:"} value={description} />
           ) : null}
-          {cliente ? <LabelValue label={"Cliente:"} value={cliente} /> : null}
+          {servico ? <LabelValue label={"Serviço:"} value={servico} /> : null}
           {dataHora ? (
             <LabelValue label={"Data/hora:"} value={dataHora} />
           ) : null}
