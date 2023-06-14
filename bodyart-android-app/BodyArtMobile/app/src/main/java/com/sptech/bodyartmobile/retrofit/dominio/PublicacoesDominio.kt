@@ -1,11 +1,9 @@
 package com.sptech.bodyartmobile.retrofit.dominio
 
+import com.sptech.bodyartmobile.retrofit.model.response.FotoResponse
+
 data class PublicacoesDominio(
     val id: Int,
-    val link: String,
-    val nome: String,
-    val descricao: String,
-    val likes: Int,
-    val linkPub: String
+    val foto: FotoResponse,
 
     )

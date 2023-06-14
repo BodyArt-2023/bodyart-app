@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.sptech.bodyartmobile.R
 import com.sptech.bodyartmobile.retrofit.dominio.PublicacoesDominio
 import com.squareup.picasso.Picasso
+import kotlin.random.Random
 
 class PublicacoesAdapter (val publicacoes:List<PublicacoesDominio>):RecyclerView.Adapter<PublicacoesAdapter.PublicacoesHolder>() {
 
@@ -20,11 +21,12 @@ class PublicacoesAdapter (val publicacoes:List<PublicacoesDominio>):RecyclerView
             val imagem: ImageView = view.findViewById(R.id.iv_publicacao)
             val imagempub: ImageView = view.findViewById(R.id.iv_foto)
 
-            favoritosAnuncio.text = publicacoes.likes.toString()
-            nomeAnuncio.text = publicacoes.nome
-            textoAnuncio.text = publicacoes.descricao
-            Picasso.get().load(publicacoes.link).into(imagem)
-            Picasso.get().load(publicacoes.linkPub).into(imagempub)
+
+            favoritosAnuncio.text = Random.nextInt(100, 1000).toString()
+            nomeAnuncio.text = publicacoes.foto.usuario.nome
+            textoAnuncio.text = publicacoes.foto.descricao
+            Picasso.get().load(publicacoes.foto.usuario.fotoPerfilPath).into(imagem)
+            Picasso.get().load(publicacoes.foto.path).into(imagempub)
 
 
 
@@ -32,13 +34,13 @@ class PublicacoesAdapter (val publicacoes:List<PublicacoesDominio>):RecyclerView
                 imagem.setImageResource(R.mipmap.ic_launcher)
             }else{
 
-                Picasso.get().load(publicacoes.link).into(imagempub)
+                Picasso.get().load(publicacoes.foto.usuario.fotoPerfilPath).into(imagempub)
             }
             if(imagempub.drawable == null){
                 imagempub.setImageResource(R.mipmap.ic_launcher)
             }else{
 
-                Picasso.get().load(publicacoes.link).into(imagempub)
+                Picasso.get().load(publicacoes.foto.path).into(imagempub)
             }
 
             }

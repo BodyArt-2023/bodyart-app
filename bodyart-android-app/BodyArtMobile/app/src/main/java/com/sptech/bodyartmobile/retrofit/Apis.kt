@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Apis {
-    val BASE_URL = "http://54.221.105.237/"
+    val BASE_URL = "http://54.82.150.46/"
 
     fun getAuthApi() : AuthApi {
         val retrofit = Retrofit.Builder()
@@ -59,5 +59,13 @@ object Apis {
             .build()
 
         return retrofit.create(ProfissionalApi::class.java)
+    }
+
+    fun getPublicacoes() : PublicacoesApi{
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create()).baseUrl(
+            BASE_URL).build()
+
+        return retrofit.create(PublicacoesApi::class.java)
     }
 }
