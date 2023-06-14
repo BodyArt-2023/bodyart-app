@@ -12,12 +12,19 @@
         android:background="@color/black_primary">
 
         <LinearLayout
+            android:id="@+id/ll_fragment_perfil_header_telaagendar"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:orientation="vertical"></LinearLayout>
+
+        <LinearLayout
             android:id="@+id/ll_servicos"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:background="@color/transparent"
             android:orientation="vertical"
+            android:layout_below="@id/ll_fragment_perfil_header_telaagendar"
             android:padding="16dp">
 
         </LinearLayout>

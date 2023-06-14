@@ -15,8 +15,23 @@ class Agendar : AppCompatActivity() {
     private var id: Long = 99999999
     private var servicoApi = Apis.getServicoApi()
 
+    private var nomeHeader: String? = null
+    private var idHeader: Long? = null
+    private var fotoHeader: String? = null
+    private var avaliacaoHeader: Double? = null
+
+    private var idUser: Long = 1
+
     override fun onCreate(savedInstanceState: Bundle?) {
         id = intent.getLongExtra("id", 1)
+
+        nomeHeader = intent.getStringExtra("nomeHeader")
+        idHeader = intent.getLongExtra("idHeader", 1)
+        fotoHeader = intent.getStringExtra("fotoHeader")
+        avaliacaoHeader = intent.getDoubleExtra("avaliacaoHeader", 4.5)
+
+        idUser = intent.getLongExtra("idUser", 1)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agendar)
         recuperarServicosProfissional()
@@ -39,6 +54,7 @@ class Agendar : AppCompatActivity() {
                     if (servicos != null) {
                         println(servicos)
                         mostrarServicos(servicos)
+                        mostrarHeader()
                     }
                 }
             }
@@ -49,6 +65,23 @@ class Agendar : AppCompatActivity() {
                 t.printStackTrace()
             }
         })
+    }
+
+    fun mostrarHeader() {
+        var tr = supportFragmentManager.beginTransaction()
+        findViewById<LinearLayout>(R.id.ll_fragment_perfil_header_telaagendar).removeAllViews()
+        var fragment = FragmentProfissional()
+
+        var args = Bundle()
+        args.putString("nome", nomeHeader)
+        idHeader?.let { args.putLong("id", it) }
+        args.putString("foto", fotoHeader)
+        avaliacaoHeader?.let { args.putDouble("avaliacao", it) }
+
+        fragment.arguments = args
+
+        tr.add(R.id.ll_fragment_perfil_header_telaagendar, fragment)
+        tr.commitAllowingStateLoss()
     }
 
     private fun mostrarServicos(servicos: List<ServicoResponse>) {
@@ -62,6 +95,14 @@ class Agendar : AppCompatActivity() {
             args.putLong("id", servico.id)
             args.putString("nome", servico.nome)
             args.putDouble("valor", servico.valor)
+
+            args.putLong("idUser", idUser)
+
+            args.putString("nomeHeader", nomeHeader)
+            idHeader?.let { args.putLong("idHeader", it) }
+            args.putString("fotoHeader", fotoHeader)
+            avaliacaoHeader?.let { args.putDouble("avaliacaoHeader", it) }
+
 //            args.putSerializable("servico", servico)
             fragment.arguments = args
 

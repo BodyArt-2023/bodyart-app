@@ -1,17 +1,24 @@
 package com.sptech.bodyartmobile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.CalendarView
-import android.widget.HorizontalScrollView
-import android.widget.LinearLayout
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.sptech.bodyartmobile.retrofit.Apis
+import com.sptech.bodyartmobile.retrofit.api.AgendaApi
+import com.sptech.bodyartmobile.retrofit.model.request.AgendaRequest
+import com.sptech.bodyartmobile.retrofit.model.request.UsuarioRequest
 import com.sptech.bodyartmobile.retrofit.model.response.ServicoResponse
+import com.sptech.bodyartmobile.retrofit.model.response.AgendaResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.Serializable
 import java.util.*
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 class MarcandoDiaHorarioAgendar : AppCompatActivity() {
     private lateinit var calendarView: CalendarView
@@ -19,12 +26,28 @@ class MarcandoDiaHorarioAgendar : AppCompatActivity() {
     private lateinit var btnAgendar: Button
     private lateinit var selectedDate: String
     private lateinit var selectedTime: String
-//    private var nomeServ: String? = null
+
+    private var nomeHeader: String? = null
+    private var idHeader: Long? = null
+    private var fotoHeader: String? = null
+    private var avaliacaoHeader: Double? = null
+
+    private var idServico: Long? = null
+
+    private var idUser: Long? = 9
+
+    private val agendaApi = Apis.getAgendamentosApi()
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
-//        nomeServ = intent.getStringExtra("nomeServ")
-//        println("Olá mundo $nomeServ")
+        nomeHeader = intent.getStringExtra("nomeHeader")
+        idHeader = intent.getLongExtra("idHeader", 1)
+        fotoHeader = intent.getStringExtra("fotoHeader")
+        avaliacaoHeader = intent.getDoubleExtra("avaliacaoHeader", 4.5)
+
+        idServico = intent.getLongExtra("idServico", 1)
+
+        idUser = intent.getLongExtra("idUser", 1)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_marcando_dia_horario_agendar)
@@ -58,8 +81,16 @@ class MarcandoDiaHorarioAgendar : AppCompatActivity() {
 
         btnAgendar.setOnClickListener {
             if (::selectedDate.isInitialized && ::selectedTime.isInitialized) {
-                val formattedData = "$selectedDate $selectedTime"
-                showAlertDialog(formattedData)
+                val msgDate = "$selectedDate $selectedTime"
+//                val formattedDateTime = "${selectedDate.substring(6, 10)}-${selectedDate.substring(3, 5)}-${selectedDate.substring(0, 2)}T${selectedTime}:00.000Z"
+                val dateFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+                val parsedDate = dateFormat.parse(selectedDate)
+                val formattedDate =
+                    SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(parsedDate)
+
+                val formattedDateTime = "$formattedDate" + "T${selectedTime}:00.000Z"
+
+                showAlertDialog(msgDate, formattedDateTime)
             } else {
                 Toast.makeText(this, "Selecione uma data e horário", Toast.LENGTH_SHORT).show()
             }
@@ -68,6 +99,26 @@ class MarcandoDiaHorarioAgendar : AppCompatActivity() {
         // Desabilita as datas passadas no calendário
         calendarView.date = currentDate.timeInMillis
         calendarView.minDate = currentDate.timeInMillis
+
+        // Chamando a header
+        mostrarHeader()
+    }
+
+    fun mostrarHeader() {
+        var tr = supportFragmentManager.beginTransaction()
+        findViewById<LinearLayout>(R.id.ll_fragment_perfil_header_telamarcandoagenda).removeAllViews()
+        var fragment = FragmentProfissional()
+
+        var args = Bundle()
+        args.putString("nome", nomeHeader)
+        idHeader?.let { args.putLong("id", it) }
+        args.putString("foto", fotoHeader)
+        avaliacaoHeader?.let { args.putDouble("avaliacao", it) }
+
+        fragment.arguments = args
+
+        tr.add(R.id.ll_fragment_perfil_header_telamarcandoagenda, fragment)
+        tr.commitAllowingStateLoss()
     }
 
     private fun createFixedTimeButtons() {
@@ -101,13 +152,64 @@ class MarcandoDiaHorarioAgendar : AppCompatActivity() {
         }
     }
 
-    private fun showAlertDialog(data: String) {
+    private fun showAlertDialog(data: String, dateTime: String) {
         val alertDialogBuilder = AlertDialog.Builder(this)
         alertDialogBuilder.setTitle("Agendamento")
         alertDialogBuilder.setMessage("Deseja agendar para $data?")
         alertDialogBuilder.setPositiveButton("Sim") { dialog, _ ->
             // Aqui você pode adicionar a lógica para enviar os dados ao banco de dados
-            Toast.makeText(this, "Agendado com sucesso!", Toast.LENGTH_SHORT).show()
+            println("CaEsta: " + dateTime)
+
+            if (dateTime.isBlank()) {
+                Toast.makeText(this, "Selecione uma data e horário", Toast.LENGTH_SHORT).show()
+            } else {
+                val dataHoraCheckin = dateTime
+                val dataHoraCheckout = dateTime
+                val idCliente: Long? = idUser
+
+                println("id do cliente " + idUser)
+
+                val idsServico = idServico?.let { intArrayOf(it.toInt()) }
+
+                val agendaRequest =
+                    AgendaRequest(
+                        dataHoraCheckin,
+                        dataHoraCheckout,
+                        idCLiente = idCliente,
+                        idsServico = idsServico
+                    )
+
+                val post = agendaApi.agendarServico(agendaRequest)
+
+                post.enqueue(object : Callback<AgendaResponse> {
+                    override fun onResponse(
+                        call: Call<AgendaResponse>,
+                        response: Response<AgendaResponse>
+                    ) {
+                        if (response.isSuccessful) {
+                            Toast.makeText(
+                                baseContext,
+                                getString(R.string.agendado_sucesso),
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            println(response.body())
+                            val telaAnterior = Intent(applicationContext, HomePage::class.java)
+                            telaAnterior.putExtra("nome", "Bruno Romeu")
+                            telaAnterior.putExtra("idUser", idUser)
+                            startActivity(telaAnterior)
+                        }
+                    }
+
+                    override fun onFailure(call: Call<AgendaResponse>, t: Throwable) {
+                        Toast.makeText(
+                            baseContext,
+                            getString(R.string.agendado_erro),
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                })
+            }
+
             dialog.dismiss()
         }
         alertDialogBuilder.setNegativeButton("Não") { dialog, _ ->

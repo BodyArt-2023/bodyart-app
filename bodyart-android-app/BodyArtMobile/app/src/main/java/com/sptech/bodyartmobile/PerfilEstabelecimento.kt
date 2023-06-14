@@ -14,6 +14,8 @@ class PerfilEstabelecimento : AppCompatActivity() {
     private var foto: String? = null
     private var avaliacao: Double? = null
 
+    private var idUser: Long? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         nome = intent.getStringExtra("nome")
@@ -21,14 +23,14 @@ class PerfilEstabelecimento : AppCompatActivity() {
         foto = intent.getStringExtra("foto")
         avaliacao = intent.getDoubleExtra("avaliacao", 4.5)
 
+        idUser = intent.getLongExtra("idUser", 1)
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_perfil_estabelecimento)
         mostrarHeader()
     }
 
     fun mostrarHeader() {
-        println("entrou na mostrarHeader")
-
         var tr = supportFragmentManager.beginTransaction()
         findViewById<LinearLayout>(R.id.ll_fragment_perfil_header).removeAllViews()
         var fragment = FragmentProfissional()
@@ -46,8 +48,18 @@ class PerfilEstabelecimento : AppCompatActivity() {
     }
 
     fun botaoAgendar(view: View) {
+
         val telaServicosProfissional = Intent(applicationContext, Agendar::class.java)
+
         telaServicosProfissional.putExtra("id", id)
+
+        telaServicosProfissional.putExtra("nomeHeader", nome)
+        telaServicosProfissional.putExtra("idHeader", id)
+        telaServicosProfissional.putExtra("fotoHeader", foto)
+        telaServicosProfissional.putExtra("avaliacaoHeader", avaliacao)
+
+        telaServicosProfissional.putExtra("idUser", idUser)
+
         startActivity(telaServicosProfissional)
     }
 
