@@ -6,6 +6,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Portifolio from "./portifolio";
 import MeusServicos from "./meusServicos";
+import Agendamentos from "./agendamentos";
 
 const BUTTONS = [
   {
@@ -45,6 +46,7 @@ export default function DashboardProfissional() {
           })}
         </div>
         <div className="w-full h-full flex flex-row justify-center gap-2 border-solid border-2 border-[#23699D30] rounded overflow-auto">
+          {page === "Agendamentos" ? <Agendamentos /> : null}
           {page === "Portifólio" ? <Portifolio /> : null}
           {page === "Meus serviços" ? <MeusServicos /> : null}
         </div>

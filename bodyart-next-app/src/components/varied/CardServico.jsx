@@ -9,6 +9,9 @@ export default function CardServico({
   duration,
   description,
   children,
+  cliente,
+  dataHora,
+  finalizado,
   className,
   onClick,
 }) {
@@ -18,15 +21,28 @@ export default function CardServico({
         children
       ) : (
         <>
-          <Label
-            text={title}
-            fontColor="light_blue"
-            fontSize="0.9rem"
-            className="w-full text-center cursor-pointer"
-          />
-          <LabelValue label={"Valor:"} value={`R$ ${value},00`} />
-          <LabelValue label={"Duração:"} value={duration} />
-          <LabelValue label={"Descrição:"} value={description} />
+          {title ? (
+            <Label
+              text={title}
+              fontColor="light_blue"
+              fontSize="0.9rem"
+              className="w-full text-center cursor-pointer"
+            />
+          ) : null}
+          {value ? (
+            <LabelValue label={"Valor:"} value={`R$ ${value},00`} />
+          ) : null}
+          {duration ? <LabelValue label={"Duração:"} value={duration} /> : null}
+          {description ? (
+            <LabelValue label={"Descrição:"} value={description} />
+          ) : null}
+          {cliente ? <LabelValue label={"Cliente:"} value={cliente} /> : null}
+          {dataHora ? (
+            <LabelValue label={"Data/hora:"} value={dataHora} />
+          ) : null}
+          {finalizado ? (
+            <LabelValue label={"Status:"} value={finalizado} />
+          ) : null}
         </>
       )}
     </StyledContainer>
