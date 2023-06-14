@@ -73,5 +73,8 @@
     <string name="tv_inicio">Ínicio</string>
     <string name="tv_perfil">Perfil</string>
     <string name="tv_bemvindo">Bem vindo usuário</string>
+    <string name="pramim"><![CDATA[O BodyArt é a solução perfeita para você agendar clientes, utilizar o marketing, gerenciar sua empresa e se comunicar com o seu público. Além disso, é um lugar para os clientes se conectarem aos serviços e descobrirem novas empresas do mercado.]]></string>
+    <string name="recursos"><![CDATA[Calendário: Melhoramos o calendário para ajudar você a ser mais eficiente e passar de um compromisso ao outro. Não é necessário memorizar seu calendário ou seus intervalos. Agora, quando você criar ou editar um agendamento, ele abrirá ao lado do seu calendário - para que você possa ver tudo sem se perder. Checkout: O processo de checkout está mais fácil do que nunca com o novo recurso de Venda Rápida. Lite - Aceite várias opções de pagamento e envie recibos, tudo na palma da sua mão Pro - Acesse seus produtos e serviços mais populares sem ter que clicar em vários menus.]]></string>
+    <string name="funciona">Em sua essência, o Booksy é um aplicativo de agendamento, mas ele é muito mais do que só agendar horários. É uma plataforma que ajuda você a administrar sua empresa, do seu jeito. Quando você se inscreve no Booksy, você começa a se beneficiar com o seguinte: - Booksy Biz: Escolha a solução que melhor se adapta às suas necessidades.- Booksy Biz Lite: Solução simples e</string>
 
 </resources>

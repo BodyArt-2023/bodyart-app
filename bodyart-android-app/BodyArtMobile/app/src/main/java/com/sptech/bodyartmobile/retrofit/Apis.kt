@@ -5,7 +5,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object Apis {
-    val BASE_URL = "https://bodyart.ddnsking.com/api/"
+    val BASE_URL = "http://54.221.105.237/"
 
     fun getAuthApi() : AuthApi {
         val retrofit = Retrofit.Builder()
