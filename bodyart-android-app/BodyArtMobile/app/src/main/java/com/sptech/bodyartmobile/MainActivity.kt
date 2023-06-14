@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                     tela2.putExtra("nome", response.body()?.nome)
                     tela2.putExtra("id", response.body()?.id)
                     tela2.putExtra("idUser", response.body()?.id)
+                    tela2.putExtra("nomeUser", response.body()?.nome)
 
                     // Iniciando a Home Page
                     startActivity(tela2)
