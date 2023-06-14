@@ -11,13 +11,13 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        >
+
        <ImageView
            android:layout_width="match_parent"
            android:layout_height="match_parent"
-           android:src="@mipmap/img_inicio"
            android:scaleType="fitXY"
            android:scaleX="3"
-           />
+           android:src="@mipmap/img_inicio" />
 
        <ImageView
            android:id="@+id/img_logo"
@@ -40,6 +40,7 @@
            android:textColorHint="@color/gray"
            android:textColor="@color/gray"
            android:inputType="textEmailAddress"/>
+
        <EditText
            android:id="@+id/et_senha"
            android:layout_width="250dp"
@@ -48,11 +49,11 @@
            android:layout_centerHorizontal="true"
            android:layout_marginTop="10dp"
            android:background="@color/white_smoke"
-           android:padding="5dp"
            android:hint="@string/pswd"
+           android:inputType="textPassword"
+           android:padding="5dp"
            android:textColor="@color/gray"
-           android:textColorHint="@color/gray"
-           android:inputType="textPassword|textVisiblePassword"/>
+           android:textColorHint="@color/gray" />
 
        <TextView
            android:id="@+id/tv_fgt_pswd"

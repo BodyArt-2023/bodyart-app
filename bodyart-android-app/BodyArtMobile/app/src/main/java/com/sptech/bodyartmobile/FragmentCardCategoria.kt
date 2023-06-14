@@ -21,6 +21,7 @@ import retrofit2.Response
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val NAME = "nome"
 private const val ID = "id"
+private const val IDUSER = "idUser"
 
 /**
  * A simple [Fragment] subclass.
@@ -31,6 +32,7 @@ class FragmentCardCategoria : Fragment() {
     // TODO: Rename and change types of parameters
     private var nome: String? = null
     private var id: Long = 0L
+    private var idUser: Long = 1
 
     val estabelecimentoApi = Apis.getEstabelecimentoApi()
     val profissionalApi = Apis.getProfissionalApi()
@@ -40,6 +42,7 @@ class FragmentCardCategoria : Fragment() {
         arguments?.let {
             nome = it.getString(NAME)
             id = it.getLong(ID)
+            idUser = it.getLong(IDUSER)
         }
     }
 
@@ -92,6 +95,7 @@ class FragmentCardCategoria : Fragment() {
                                         var args = Bundle()
                                         args.putString("nome", estabelecimento.nome)
                                         args.putLong("id", estabelecimento.id)
+                                        args.putLong("idUser", idUser)
                                         if (estabelecimento.foto == null) {
                                             //manter foto default
                                         } else {

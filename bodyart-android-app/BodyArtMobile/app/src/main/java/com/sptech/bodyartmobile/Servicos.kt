@@ -18,15 +18,18 @@ class Servicos : AppCompatActivity() {
 
     val categoriaApi = Apis.getCategoriaApi()
 
+    private var idUser: Long? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
+        idUser = intent.getLongExtra("idUser", 1)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_servicos)
 
         //voltar para HomePage
         val voltar = findViewById<TextView>(R.id.tv_back)
-        voltar.setOnClickListener{
-            val telaAnterior = Intent(applicationContext, HomePage::class.java)
-            startActivity(telaAnterior)
+        voltar.setOnClickListener {
+            onBackPressed()
         }
 
         //ir para categoria selecionada
@@ -42,7 +45,10 @@ class Servicos : AppCompatActivity() {
         getTodasCategorias.enqueue(object : Callback<List<CategoriaResponse>> {
 
             // quando houver comunicação com a API
-            override fun onResponse(call: Call<List<CategoriaResponse>>, response: Response<List<CategoriaResponse>>) {
+            override fun onResponse(
+                call: Call<List<CategoriaResponse>>,
+                response: Response<List<CategoriaResponse>>
+            ) {
                 if (response.isSuccessful) { // status 2xx (200, 201, 204 etc)
                     val categorias = response.body()
 
@@ -61,7 +67,7 @@ class Servicos : AppCompatActivity() {
         })
     }
 
-    fun mostrarCategorias(categorias : List<CategoriaResponse>) {
+    fun mostrarCategorias(categorias: List<CategoriaResponse>) {
 
         var tr = supportFragmentManager.beginTransaction()
         findViewById<LinearLayout>(R.id.ll_fragment_card_categoria).removeAllViews()
@@ -70,6 +76,8 @@ class Servicos : AppCompatActivity() {
             var args = Bundle()
             args.putString("nome", categoria.nome)
             args.putLong("id", categoria.id)
+            idUser?.let { args.putLong("idUser", it) }
+
             fragmentCategoria.arguments = args
             tr.add(R.id.ll_fragment_card_categoria, fragmentCategoria)
         }
