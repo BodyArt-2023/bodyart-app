@@ -68,4 +68,15 @@ object Apis {
 
         return retrofit.create(PublicacoesApi::class.java)
     }
+
+    fun getAgendamentosApi(): AgendaApi {
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl(BASE_URL)
+            .build()
+
+        return retrofit.create(AgendaApi::class.java)
+    }
+
+
 }

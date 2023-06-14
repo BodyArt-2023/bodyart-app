@@ -16,17 +16,20 @@ class HomePage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
+        val idUser = intent.getLongExtra("idUser", 1)
 
         val tvServicos = findViewById<TextView>(R.id.tv_servicos)
         val ivServicos = findViewById<ImageView>(R.id.iv_servico)
 
         tvServicos.setOnClickListener{
             val telaServicos = Intent(applicationContext, Servicos::class.java)
+            telaServicos.putExtra("idUser", idUser)
             startActivity(telaServicos)
         }
 
         ivServicos.setOnClickListener {
             val telaServicos = Intent(applicationContext, Servicos::class.java)
+            telaServicos.putExtra("idUser", idUser)
             startActivity(telaServicos)
         }
 

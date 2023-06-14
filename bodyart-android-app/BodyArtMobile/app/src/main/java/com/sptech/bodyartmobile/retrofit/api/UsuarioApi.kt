@@ -10,7 +10,7 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface UsuarioApi {
-    @POST("/usuarios/cliente")
+    @POST("/api/usuarios/cliente")
     fun cadastro(@Body usuarioRequest: UsuarioRequest) : Call<UsuarioResponse>
 
     @Headers("Content-Type: application/json")

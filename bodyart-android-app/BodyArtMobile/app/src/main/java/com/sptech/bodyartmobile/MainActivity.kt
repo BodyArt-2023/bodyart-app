@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                     // Envio de dados
                     tela2.putExtra("nome", response.body()?.nome)
                     tela2.putExtra("id", response.body()?.id)
+                    tela2.putExtra("idUser", response.body()?.id)
 
                     // Iniciando a Home Page
                     startActivity(tela2)
